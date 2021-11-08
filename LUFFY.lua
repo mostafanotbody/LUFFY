@@ -834,7 +834,7 @@ local status = response[4]
 if code ~= 200 then return false, code 
 end 
 file = io.open(file_path, "w+") 
-file:write(table.concat(respF A E D E R)) 
+file:write(table.concat(respbody)) 
 file:close() 
 return file_path, code 
 end 
@@ -15930,7 +15930,7 @@ Msᴀɢ ~ #msgs
 🇪🇬 - 𝄬 𝗖𝗛 - 『@Anime_ib』 ●
 ]],
 [[
-.𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , #username  🖤 ↴
+.𖣂 𝙪𝙨𝙚𝙧𝙣??𝙢𝙚 , #username  🖤 ↴
 .𖣂 𝙨𝙩𝙖𝙨𝙩 , #stast  🖤 ↴
 .𖣂 𝙡𝘿 , #id  🖤 ↴
 .𖣂 𝘼𝙪𝙩𝙤 , #auto  🖤 ↴
@@ -19224,7 +19224,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'Lucas',url="t.me/il9_9li"},{text = 'F A E D E R', url="t.me/Jicco"}},
-{{text = '𝙱??𝙲𝙺', callback_data="/HHH"}},
+{{text = '𝙱𝙰𝙲𝙺', callback_data="/HHH"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
