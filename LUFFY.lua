@@ -175,7 +175,7 @@ end
 
 dev_users = {2078351596,2043322422,1266661700,2002733946}   
 function Developers(msg)  
- local 𝙻𝚄𝙵𝙵𝚈 = false 
+local 𝙻𝚄𝙵𝙵𝚈 = false 
 for k,v in pairs(dev_users) do  
 if tonumber(msg.sender_user_id_) == tonumber(v) then  
 𝙻𝚄𝙵𝙵𝚈= true  
