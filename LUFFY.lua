@@ -1861,9 +1861,9 @@ echo '●○━━━━LUFFY━━━━○●\n 🔌l •⊱ 『 مـده تـ
 end
 if text == 'تحديث السورس ' and DevSoFi(msg) then 
 os.execute('rm -rf LUFFY.lua')
-os.execute('wget https://raw.githubusercontent.com/LucasnotF A E D E R/LUFFY1/main/LUFFY.lua')
+os.execute('wget https://raw.githubusercontent.com/mostafanotbody/LUFFY/main/LUFFY.lua')
 send(msg.chat_id_, msg.id_,'💞  تم تحديث السورس')
-dofile('LUFFY.lua')  
+dofile('KLAER.lua')  
 end
 if text == 'جلب المشتركين' and Devban(msg) then 
 local list = bot_data:smembers(ban_id..'User_Bot') 
