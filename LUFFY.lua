@@ -2006,10 +2006,10 @@ local Text = [[
 ]]
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = 'مطورين السورس⚙', url="t.me/hogan21"}}, 
+{{text = 'مطورين السورس⚙', url="t.me/ART_ABOT"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/921&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 
@@ -2078,7 +2078,7 @@ keyboard.inline_keyboard = {
 {{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/921=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == "ضع اسم للبوت" and msa3d(msg) then  
@@ -5099,7 +5099,7 @@ keyboard.inline_keyboard = {
 {{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/921=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == '●○━━━━LUFFY━━━━○●' then
 local Text = [[ 
@@ -5113,7 +5113,7 @@ keyboard.inline_keyboard = {
 {{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/921=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == 'التواصل'  then
@@ -5126,7 +5126,7 @@ keyboard.inline_keyboard = {
 {{text = '˹ᴛᴀᴡᴏsʟ˼', url="t.me/ART_ABOT"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/921&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == 'العاب كلير' or text == 'العاب مطوره' or text == 'العاب متطوره' then  
 local Text = [[  
@@ -5163,7 +5163,7 @@ keyboard.inline_keyboard = {
 {{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }  
 local msg_id = msg.id_/2097152/0.5  
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/921&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --------------------------------------------------------------------------------------------------------------
 if text == 'تحديث' and Devban(msg) then    
