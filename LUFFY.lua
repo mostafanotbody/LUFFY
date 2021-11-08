@@ -985,7 +985,7 @@ function plugin_KLAER(msg)
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 plugin = dofile("File_Bot/"..v)
-if plugin.LUFFYand msg then
+if plugin.LUFFY and msg then
 pre_msg = plugin.KLAER(msg)
 end
 end
