@@ -1621,7 +1621,7 @@ if Chat_Type == 'UserBot' then
 if text == '/start' or text == '『رجوع』' then 
 if Devban(msg) then
 if not msa3d(msg) then
-local bl = '●انت الان المطور الثانوي في البوت \n● سورس كلير\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/Anime_ib)'
+local bl = '●انت الان المطور الثانوي في البوت \n● سورس لوفي\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/Anime_ib)'
 local keyboard = {
 {'الاحصائيات'},
 {'المطور','مساعد'},
@@ -1641,7 +1641,7 @@ end
 if text == "/start" then
 if not msa3d(msg) then
 if not Devban(msg) then
-local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير') 
+local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي') 
 local LUFFY_Msg = { 
 ' ـــــــــــــــــــــــــــــــــــــــــــــــ\n   🤖╖ أهلآ بك عزيزي أنا بوت  '..Namebot..'\n🌐╢ وظيفتي حماية المجموعات\n✅╢ لتفعيل البوت عليك اتباع مايلي \n●╢ أضِف البوت إلى مجموعتك\n⚡️╢ ارفعهُ » مشرف\n⬆️╜ سيتم ترقيتك مالك في البوت\nــــــــــــــــــــــــــــــــــــــــــــــــــــ ',
 } 
@@ -1678,7 +1678,7 @@ end
 if Chat_Type == 'UserBot' then
 if text == '/start' or text == '『رجوع』' then  
 if msa3d(msg) then
-local bl = '●انت الان المطور الاساسي في البوت \n● سورس كلير\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/Anime_ib)'
+local bl = '●انت الان المطور الاساسي في البوت \n● سورس لوفي\n ●يمكنك تحكم في البوتات من الكيبورد أسفل \n[تابع جديدنا](t.me/Anime_ib)'
 local keyboard = {
 {'ضع اسم للبوت','معلومات الكيبورد'},
 {'المطور','المساعد'},
@@ -1997,7 +1997,7 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 if text == 'الاصدار' and Devban(msg) then 
 bot_data:del(ban_id..'Srt:Bot') 
-send(msg.chat_id_, msg.id_,' ● اصدار سورس كلير{ S:1✓}')
+send(msg.chat_id_, msg.id_,' ● اصدار سورس لوفي{ S:1✓}')
 end
 if text == '⇣───『 قـناه المطورين』───⇣' then
 local Text = [[ 
@@ -2068,7 +2068,7 @@ end
 if text == 'قناه السورس' and Devban(msg) then
 bot_data:del(ban_id..'Srt:Bot') 
 local Text = [[ 
- ● من أحسن السورسات على التليجرام سورس كلير ●
+ ● من أحسن السورسات على التليجرام سورس لوفي ●
 بجد سورس أمان جدا وفي مميزات جامده
 تع نصب بوتك عندنا لو محظور
 خش على تواصل هيدخلك لروم التواصل 
@@ -2882,7 +2882,7 @@ end
 if msg.content_.ID == "MessageChatAddMembers" then 
 if msg.content_.members_[0].id_ == tonumber(ban_id) then 
 print("it is Bot")
-N = (bot_data:get(ban_id.."Name:Bot") or "كلير")
+N = (bot_data:get(ban_id.."Name:Bot") or "لوفي")
 tdcli_function ({ID = "GetUser",user_id_ = ban_id,},function(arg,data) 
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = ban_id,offset_ = 0,limit_ = 1},function(extra,result,success) 
 if result.photos_[0] then
@@ -4376,7 +4376,7 @@ local vBoodyv_Msg = {
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هيا عيوب سورس كلير؟ ", 
+"ما هيا عيوب سورس لوفي؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
@@ -4393,13 +4393,13 @@ local vBoodyv_Msg = {
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس كلير؟؟ ", 
+" هل يعجبك سورس لوفي؟؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس كلير؟ ", 
+"اي رايك في سورس لوفي؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " نسبه الندم عندك للي وثقت فيهم ؟", 
@@ -5092,7 +5092,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, 
 end
 if text == 'قناة السورس' then
 local Text = [[ 
-[قناه سورس كلير ادخل وتابع الجديد](t.me/Anime_ib)
+[قناه سورس لوفي ادخل وتابع الجديد](t.me/Anime_ib)
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
@@ -5103,7 +5103,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end
 if text == '●○━━━━LUFFY━━━━○●' then
 local Text = [[ 
- ●من أحسن السورسات على التليجرام سورس كلير●
+ ●من أحسن السورسات على التليجرام سورس لوفي●
 بجد سورس أمان جدا وفي مميزات جامده
 تع نصب بوتك عندنا لو محظور
 خش على تواصل هيدخلك لروم التواصل 
@@ -5128,9 +5128,9 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/921&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == 'العاب كلير' or text == 'العاب مطوره' or text == 'العاب متطوره' then  
+if text == 'العاب لوفي' or text == 'العاب مطوره' or text == 'العاب متطوره' then  
 local Text = [[  
- ● اهلا في قائمه الالعاب المتطوره سورس كلير● 
+ ● اهلا في قائمه الالعاب المتطوره سورس لوفي● 
 تفضل اختر لعبه من القائمه 
 ]]  
 keyboard = {}   
@@ -7248,7 +7248,7 @@ send(msg.chat_id_, msg.id_, "\n ● تم مسح قائمة المطورين  ")
 end
 
 if text == 'الملفات' and Devban(msg) then
-t = ' ● ملفات السورس كلير↓\n ●○━━━━LUFFY━━━━○● \n'
+t = ' ● ملفات السورس لوفي↓\n ●○━━━━LUFFY━━━━○● \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -7265,8 +7265,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n ● اهلا بك في متجر ملفات كلير\n ● ملفات السورس ↓\n◤━───━??𝗼𝗼𝗼𝗻━───━◥\n\n"
-local TextE = "\n●○━━━━LUFFY━━━━○●\n ● علامة تعني { ✔️ } ملف مفعل\n ● علامة تعني { ✖ } ملف معطل\n ● قناة سورس كلير↓\n".." ● [اضغط هنا لدخول](t.me/Anime_ib) \n"
+local TextS = "\n ● اهلا بك في متجر ملفات لوفي\n ● ملفات السورس ↓\n◤━───━??𝗼𝗼𝗼𝗻━───━◥\n\n"
+local TextE = "\n●○━━━━LUFFY━━━━○●\n ● علامة تعني { ✔️ } ملف مفعل\n ● علامة تعني { ✖ } ملف معطل\n ● قناة سورس لوفي↓\n".." ● [اضغط هنا لدخول](t.me/Anime_ib) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -7304,7 +7304,7 @@ os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('LUFFY.lua')  
 else
-send(msg.chat_id_, msg.id_," ● عذرا الملف لايدعم سورس كلير\n") 
+send(msg.chat_id_, msg.id_," ● عذرا الملف لايدعم سورس لوفي\n") 
 end
 return false
 end
@@ -7326,7 +7326,7 @@ chek:close()
 send(msg.chat_id_, msg.id_,t) 
 dofile('LUFFY.lua')  
 else
-send(msg.chat_id_, msg.id_," ● عذرا الملف لايدعم سورس كلير\n") 
+send(msg.chat_id_, msg.id_," ● عذرا الملف لايدعم سورس لوفي\n") 
 end
 return false
 end
@@ -9897,7 +9897,7 @@ send(msg.chat_id_, msg.id_,' هذا الامر لا يخصك')
 return false
 end
 local Text =[[
-تم تغير الكلمه الي كلير اكتب كلير وسوف يظهر لك بعض زراير اختار ماتريده 
+تم تغير الكلمه الي لوفي اكتب لوفي وسوف يظهر لك بعض زراير اختار ماتريده 
 the source LUFFY the best source on tele
 ]]
 keyboard = {} 
@@ -9911,7 +9911,7 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 return false
 end 
 
-if text == 'كلير' then
+if text == 'لوفي' then
 if not Mod(msg) then
 send(msg.chat_id_, msg.id_,' هذا الامر لا يخصك')
 return false
@@ -12463,7 +12463,7 @@ local text =
 ' }\n'..' ●  الايدي  ⇐ { '..idgp..
 ' }\n'..' ●  الايدي بالصوره  ⇐ { '..idph..
 ' }\n'..' ●  الرفع  ⇐ { '..setadd..
-' }\n'..' ●  الحظر  ⇐ { '..DRGm..' }\n\n●○━━━━LUFFY━━━━○●\n ● قناة سورس كلير↓\n━━━━━━━\n'
+' }\n'..' ●  الحظر  ⇐ { '..DRGm..' }\n\n●○━━━━LUFFY━━━━○●\n ● قناة سورس لوفي↓\n━━━━━━━\n'
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = 'اخفاء الاوامر', callback_data="/hide"}},}
 https.request("https://api.telegram.org/bot"..token..'/sendmessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(text).."&reply_to_message_id=markdown&reply_markup="..JSON.encode(keyboard)) 
@@ -13576,8 +13576,8 @@ msg_type = 'MSG:NewUser'
 end
 
 
-if text == ""..(bot_data:get(ban_id..'Name:Bot') or 'كلير').."" then  
-Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير')
+if text == ""..(bot_data:get(ban_id..'Name:Bot') or 'لوفي').."" then  
+Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي')
 local LUFFY_Msg = {
 'ننعم يروحي 😻??',
 'نعم يا قلب  '..Namebot..'',
@@ -13616,7 +13616,7 @@ end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = ban_id, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end
 if text == "بوت" then
-local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير') 
+local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي') 
 local LUFFY_Msg = { 
 'اسمي  '..Namebot..' يا قلبي 🤤💚',
 'اسمي '..Namebot..' يا روحي🙈❤️',
@@ -14252,7 +14252,7 @@ local ramsesj20 =  "\n التاريخ : "..os.date("%Y/%m/%d")
 send(msg.chat_id_, msg.id_,ramsesj20)
 end
 --------------
-if text == ""..(bot_data:get(ban_id..'Name:Bot') or 'كلير').." غادر" or text == 'غادر' and Sudo(msg) then     
+if text == ""..(bot_data:get(ban_id..'Name:Bot') or 'لوفي').." غادر" or text == 'غادر' and Sudo(msg) then     
 if Sudo(msg) and not bot_data:get(ban_id..'Left:Bot'..msg.chat_id_)  then 
 if not Bot(msg) then 
 tdcli_function ({ID = "ChangeChatMemberStatus",chat_id_=msg.chat_id_,user_id_=ban_id,status_={ID = "ChatMemberStatusLeft"},},function(e,g) end, nil) 
@@ -14263,7 +14263,7 @@ return false
 end
 end
 if text == 'الاحصائيات' and msa3d(msg) then 
-local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير') 
+local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي') 
 local Groups = bot_data:scard(ban_id..'Chek:Groups')  
 local Users = bot_data:scard(ban_id..'User_Bot')  
 local getbioY = getbio(msg.sender_user_id_)
@@ -14295,7 +14295,7 @@ end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = ban_id, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end
 if text == 'الجروبات' and msa3d(msg) then 
-local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'كلير') 
+local Namebot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي') 
 local Groups = bot_data:scard(ban_id..'Chek:Groups')  
 Text = ' ● عدد الجروبات  ⇐ {`'..Groups..'`}'
 local msg_id = msg.id_/2097152/0.5  
@@ -19074,7 +19074,7 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/change-hklp' then
 local Teext =[[
- سعر التنصيب علي سورس كلير
+ سعر التنصيب علي سورس لوفي
 التنصيب مجاني عشان اخواتنا بس والله الهدف من السورس دا هوايه مش فلوس
 تواصل مع المطورين لتنصيب
  ●○━━━━LUFFY━━━━○●
@@ -19501,7 +19501,7 @@ local Teext =[[
 
 يتوافق مع : برج العقرب ، برج الحوت ،برج الجدي ،برج الثور
 
-الاعمال الملائمة : أطباء، صيادلة، مدركلير، أخصائيو تغذية، شيف، سماسرة
+الاعمال الملائمة : أطباء، صيادلة، مدرلوفي، أخصائيو تغذية، شيف، سماسرة
 
 ايجابيات برج السرطان : عاطفي، محب، صاحب حدس وبديهة، صاحب خيال واسع
  ●○━━━━LUFFY━━━━○●
@@ -21960,7 +21960,7 @@ if (text and text == "تفعيل اوامر التسليه") then
 send(msg.chat_id_, msg.id_, ' ●  تم تفعيل اوامر التسليه')
 bot_data:del(ban_id.."Fun_Bots:"..msg.chat_id_)
 end
-local Name_Bot = (bot_data:get(ban_id..'Name:Bot') or 'كلير')
+local Name_Bot = (bot_data:get(ban_id..'Name:Bot') or 'لوفي')
 if not bot_data:get(ban_id.."Fun_Bots:"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
