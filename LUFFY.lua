@@ -824,7 +824,7 @@ sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './'..ban_id..'.json', '- عدد �
 end
 function download_to_file(url, file_path) 
 local respbody = {} 
-local options = { url = url, sink = ltn12.sink.table(respF A E D E R), redirect = true } 
+local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 
 local response = nil 
 options.redirect = false 
 response = {https.request(options)} 
@@ -19224,7 +19224,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'Lucas',url="t.me/il9_9li"},{text = 'F A E D E R', url="t.me/Jicco"}},
-{{text = '𝙱𝙰𝙲𝙺', callback_data="/HHH"}},
+{{text = '𝙱??𝙲𝙺', callback_data="/HHH"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
