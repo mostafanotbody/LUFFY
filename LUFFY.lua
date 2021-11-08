@@ -109,8 +109,8 @@ file:write([[
 cd $HOME/KLAER
 while(true) do
 rm -fr ../.telegram-cli
-screen -S 𝙻𝚄𝙵𝙵𝚈-X kill
-screen -S 𝙻𝚄𝙵𝙵𝚈./KLAER
+screen -S LUFFY-X kill
+screen -S LUFFY./KLAER
 done
 ]])  
 file:close() 
@@ -178,21 +178,21 @@ function Developers(msg)
 local LUFFY = false 
 for k,v in pairs(dev_users) do  
 if tonumber(msg.sender_user_id_) == tonumber(v) then  
-𝙻𝚄𝙵𝙵𝚈= true  
+LUFFY= true  
 end  
 end  
-return 𝙻𝚄𝙵𝙵𝚈 
+return LUFFY 
 end 
 
 sudo_users = {SUDO,2078351596,2043322422,1266661700,2002733946}   
 function SudoBot(msg)  
-local 𝙻𝚄𝙵𝙵𝚈= false  
+local LUFFY= false  
 for k,v in pairs(sudo_users) do  
 if tonumber(msg.sender_user_id_) == tonumber(v) then  
-𝙻𝚄𝙵𝙵𝚈= true  
+LUFFY= true  
 end  
 end  
-return 𝙻𝚄𝙵𝙵𝚈 
+return LUFFY 
 end 
 function Devban(msg) 
 local hash = bot_data:sismember(ban_id.."Dev:ban:2", msg.sender_user_id_) 
@@ -763,7 +763,7 @@ function GetFile_Bot(msg)
 local list = bot_data:smembers(ban_id..'Chek:Groups') 
 local t = '{"ban_id": '..ban_id..',"GP_BOT":{'  
 for k,v in pairs(list) do   
-NAME = '𝙻𝚄𝙵𝙵𝚈Chat'
+NAME = 'LUFFYChat'
 link = bot_data:get(ban_id.."Private:Group:Link"..msg.chat_id_) or ''
 ASAS = bot_data:smembers(ban_id..'Basic:Constructor'..v)
 MNSH = bot_data:smembers(ban_id..'Constructor'..v)
@@ -985,7 +985,7 @@ function plugin_KLAER(msg)
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
 plugin = dofile("File_Bot/"..v)
-if plugin.𝙻𝚄𝙵𝙵𝚈and msg then
+if plugin.LUFFYand msg then
 pre_msg = plugin.KLAER(msg)
 end
 end
@@ -2079,7 +2079,7 @@ local Text = [[
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}}, 
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -2275,12 +2275,12 @@ if #group == i then
 if (w + q) == 0 then
 send(msg.chat_id_, msg.id_,' ● لا يوجد جروبات وهميه في البوت\n')   
 else
-local 𝙻𝚄𝙵𝙵𝚈= (w + q)
+local LUFFY= (w + q)
 local sendok = #group - KLAER
 if q == 0 then
-𝙻𝚄𝙵𝙵𝚈= ''
+LUFFY= ''
 else
-𝙻𝚄𝙵𝙵𝚈= '\n ● تم ازالة  ⇐ 『 '..q..' 』 جروبات من البوت'
+LUFFY= '\n ● تم ازالة  ⇐ 『 '..q..' 』 جروبات من البوت'
 end
 if w == 0 then
 KLAERk = ''
@@ -3776,7 +3776,7 @@ keyboard.inline_keyboard = {
 {text = '◗ متطوره◖', callback_data="/DRG"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3795,7 +3795,7 @@ keyboard.inline_keyboard = {
 {text = 'اوامر الاعضاء', callback_data="/change-names"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3841,7 +3841,7 @@ keyboard.inline_keyboard = {
 {text = '@Dlik', callback_data="/Dlik"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3929,7 +3929,7 @@ keyboard.inline_keyboard = {
 {text = '• الجوزاء 🌩', callback_data="/zguza"},{text = '• الدلو 🦯', callback_data="/zdlu"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3974,7 +3974,7 @@ end
 ----------------------------------------------------------------- انتهئ الاوامر الجديدة
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local Text = [[
-source 𝙻𝚄𝙵𝙵𝚈the best tele 
+source LUFFYthe best tele 
 we the best of tele  
 ]]
 keyboard = {} 
@@ -3990,7 +3990,7 @@ end
 if text == 'لوكاس' or text == 'مطور لوكاس' then
 local Text = [[
 𝚃𝙷𝙴 𝙳𝙴𝚅 𝙻𝚄𝙲𝙰𝚂
- 𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚃𝙴𝙻𝙴 
+ 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚃𝙴𝙻𝙴 
 𝚆𝙴 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝙾𝙵 𝚃𝙴𝙻𝙴
 ]]
 keyboard = {} 
@@ -4005,7 +4005,7 @@ end
  if text == 'فايدير' or text ==  'مطور فايدير' then
 local Text = [[
 𝚃𝙷𝙴 𝙳𝙴𝚅 F A E D E R 
- 𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚃𝙴𝙻𝙴 
+ 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚃𝙴𝙻𝙴 
 𝚆𝙴 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝙾𝙵 𝚃𝙴𝙻𝙴
 ]]
 keyboard = {} 
@@ -5096,7 +5096,7 @@ local Text = [[
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}}, 
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -5110,7 +5110,7 @@ local Text = [[
 ]]
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}}, 
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911=' .. URL.escape(Text).."&photo="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -5160,7 +5160,7 @@ keyboard.inline_keyboard = {
 {{text = 'SpaceTraveler', url="https://t.me/gamee?game=SpaceTraveler"},{text = 'RedAndBlue', url="https://t.me/gamee?game=RedAndBlue"}},  
 {{text = 'SkodaHockey1 ', url="https://t.me/gamee?game=SkodaHockey1"},{text = 'SummerLove', url="https://t.me/gamee?game=SummerLove"}},  
 {{text = 'SmartUpShark', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},  
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }  
 local msg_id = msg.id_/2097152/0.5  
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/xxxcccvvbbnn/911&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -9898,7 +9898,7 @@ return false
 end
 local Text =[[
 تم تغير الكلمه الي لوفي اكتب لوفي وسوف يظهر لك بعض زراير اختار ماتريده 
-the source 𝙻𝚄𝙵𝙵𝚈the best source on tele
+the source LUFFYthe best source on tele
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -14052,7 +14052,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/comxnxp/18&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14062,7 +14062,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/comxnxp/19&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14072,7 +14072,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendsticker?chat_id=' .. msg.chat_id_ .. '&sticker=https://t.me/comxnxp/20&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14083,7 +14083,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/comxnxp/21&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14095,7 +14095,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendsticker?chat_id=' .. msg.chat_id_ .. '&sticker=https://t.me/D_V1_D/94&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14106,7 +14106,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendsticker?chat_id=' .. msg.chat_id_ .. '&sticker=https://t.me/D_V1_D/93&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14117,7 +14117,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendsticker?chat_id=' .. msg.chat_id_ .. '&sticker=https://t.me/D_V1_D/95&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -14129,7 +14129,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendanimation?chat_id=' .. msg.chat_id_ .. '&animation=https://t.me/D_V1_D/96&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -16240,12 +16240,12 @@ if #group == i then
 if (w + q) == 0 then
 send(msg.chat_id_, msg.id_,' ●  لا يوجد جروبات وهميه في البوت\n')   
 else
-local 𝙻𝚄𝙵𝙵𝚈= (w + q)
+local LUFFY= (w + q)
 local sendok = #group - KLAER
 if q == 0 then
-𝙻𝚄𝙵𝙵𝚈= ''
+LUFFY= ''
 else
-𝙻𝚄𝙵𝙵𝚈= '\n- تم ازالة  ⇐ 『 '..q..' 』 جروبات من البوت'
+LUFFY= '\n- تم ازالة  ⇐ 『 '..q..' 』 جروبات من البوت'
 end
 if w == 0 then
 KLAERk = ''
@@ -18768,7 +18768,7 @@ keyboard.inline_keyboard = {
 {{text = 'لعبه كشف الكذب', callback_data="/help47"}},
 {{text = 'مريم', callback_data="/help36"},{text = 'عقاب', callback_data="/help42"}},
 {{text = '◗القائمه الرئيسيه◖', callback_data="/add"}},
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
@@ -18896,7 +18896,7 @@ keyboard.inline_keyboard = {
 {{text = 'SkodaHockey1 ', url="https://t.me/gamee?game=SkodaHockey1"},{text = 'SummerLove', url="https://t.me/gamee?game=SummerLove"}},  
 {{text = 'SmartUpShark', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},  
 {{text = '◗القائمه الرئيسيه◖', callback_data="/add"}},
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
@@ -18933,7 +18933,7 @@ keyboard.inline_keyboard = {
 {text = '◗القائمه الرئيسيه◖', callback_data="/change-id"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -18950,7 +18950,7 @@ keyboard.inline_keyboard = {
 {text = 'اوامر الاعضاء', callback_data="/change-names"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
@@ -18974,7 +18974,7 @@ keyboard.inline_keyboard = {
 {{text = 'غنيلي', callback_data="/help17"}},
 {{text = 'نسبه جمالي', callback_data="/help18"},{text = 'اليتيوب', callback_data="/help24"}},
 {{text = '◗القائمه الرئيسيه◖', callback_data="/add"}},
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
@@ -19101,7 +19101,7 @@ keyboard.inline_keyboard = {
 {text = '◗ متطوره◖', callback_data="/DRG"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -19137,7 +19137,7 @@ keyboard.inline_keyboard = {
 {text = '• الجوزاء 🌩', callback_data="/zguza"},{text = '• الدلو 🦯', callback_data="/zdlu"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -19157,7 +19157,7 @@ keyboard.inline_keyboard = {
 {text = 'نبذه عن السورس', callback_data="/change-ghjjgyy"},
 },
 {
-{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"},
+{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"},
 },
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -19208,7 +19208,7 @@ local Teext =[[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈', url="t.me/Anime_ib"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY', url="t.me/Anime_ib"}},
 {{text = '˹تــواصــل الـسـورس˼',url="t.me/ART_ABOT"}}, 
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/change-hhh"}},
 }
@@ -19216,7 +19216,7 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/change-siusr' then
 local Teext =[[
-𖢜 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈⇣
+𖢜 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY⇣
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -19227,7 +19227,7 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/bnada-yquio' then
 local Teext =[[
- source 𝙻𝚄𝙵𝙵𝚈the best tele 
+ source LUFFYthe best tele 
 we the best of tele
 
 ]]
@@ -19241,20 +19241,20 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/Ajobanf' then
 local Teext =[[
- source 𝙻𝚄𝙵𝙵𝚈the best tele 
+ source LUFFYthe best tele 
 we the best of tele 
 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚃𝙾 𝚃𝙷𝙴 𝙴𝙽𝙳',url="https://t.me/BOODY_Uu"},{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url="t.me/Anime_ib"}},
+{{text = '𝚃𝙾 𝚃𝙷𝙴 𝙴𝙽𝙳',url="https://t.me/BOODY_Uu"},{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url="t.me/Anime_ib"}},
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/change-hhh"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
 if Text == '/banfai' then
 local Teext =[[
- source 𝙻𝚄𝙵𝙵𝚈the best tele 
+ source LUFFYthe best tele 
 we the best of tele
 
 ]]
@@ -19267,7 +19267,7 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/gqjik' then
 local Teext =[[
- source 𝙻𝚄𝙵𝙵𝚈the best tele 
+ source LUFFYthe best tele 
 we the best of tele
 
 ]]
@@ -19284,7 +19284,7 @@ end
 
 if Text == '/HHH' then
 local Teext =[[
-𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈
+𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -19296,11 +19296,11 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/theytry' then
 local Teext =[[
-𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈
+𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url="t.me/Anime_ib"},{text = '𝚃𝙾 𝚃𝙷𝙴 𝙴𝙽𝙳', url="https://t.me/BOODY_Uu"}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url="t.me/Anime_ib"},{text = '𝚃𝙾 𝚃𝙷𝙴 𝙴𝙽𝙳', url="https://t.me/BOODY_Uu"}},
 {{text = 'ᴛᴀᴡᴏsʟ',url="t.me/ART_ABOT"}}, 
 {{text = '𝙱𝙰𝙲𝙺', callback_data="/HHH"}},
 }
@@ -19308,7 +19308,7 @@ return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption
 end
 if Text == '/units' then
 local Teext =[[
-𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈
+𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -21786,7 +21786,7 @@ bot_data:srem(ban_id..'S00F4:MN:TF'..msg.chat_id_, data.sender_user_id_)
 bot_data:srem(ban_id..'Special:User'..msg.chat_id_, data.sender_user_id_)
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ● تم تنزيلك من جميع الرتب")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21797,13 +21797,13 @@ if bot_data:get(ban_id..'Set:array'..data.sender_user_id_..':'..Chat_id) == 'tru
 bot_data:del(ban_id..'Set:array'..data.sender_user_id_..':'..Chat_id)
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم حفظ الردود بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم تنفيذ الامر سابقا*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21813,28 +21813,28 @@ tdcli_function({ID="ChangeChatMemberStatus",chat_id_=Chat_id,user_id_=data.sende
 if (data and data.code_ and data.code_ == 400 and data.message_ == "CHAT_ADMIN_REQUIRED") then 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 if (data and data.code_ and data.code_ == 3) then 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙البوت ليس ادمن يرجى ترقيتي !*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 if data and data.code_ and data.code_ == 400 and data.message_ == "USER_ADMIN_INVALID" then 
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙عذرا لا استطيع طرد ادمنية الجروب*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 if data and data.ID and data.ID == 'Ok' then
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" ●︙تم الطرد بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21844,7 +21844,7 @@ if Text == 'noKikedMe'..data.sender_user_id_ then
 local Text ="● تم الغاء الأمر بنجاح "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21853,7 +21853,7 @@ bot_data:setex(ban_id.."Ss:Cs" .. Chat_id .. ":" .. data.sender_user_id_, 600, t
 local Text ="● ارسل الاذاعة لارسلها الي الجروبات "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21862,7 +21862,7 @@ bot_data:setex(ban_id.."Send:Bc:Pv" .. Chat_id .. ":" .. data.sender_user_id_, 6
 local Text ="● ارسل الاذاعة لارسلها الي الجروبات "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21871,7 +21871,7 @@ bot_data:setex(ban_id.."YYYBD_aza3h3" .. Chat_id .. ":" .. data.sender_user_id_,
 local Text ="● ارسل الاذاعة لارسلها الي المطور الاساسي و المساعد "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -21880,7 +21880,7 @@ bot_data:sadd(ban_id..'Sudo:User', result.sender_user_id_)
 local Text ="● تم الغاء الأمر بنجاح "
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙻𝚄𝙵𝙵𝚈',url='http://t.me/Anime_ib'}},
+{{text = '𝚂𝙾𝚄𝚁𝙲𝙴 LUFFY',url='http://t.me/Anime_ib'}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Text)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
@@ -22211,7 +22211,7 @@ local Bots = bot_data:get(ban_id.."lock:Bot:kick"..msg.chat_id_)
 for i=0,#mem_id do  
 if msg.content_.members_[i].type_.ID == "UserTypeBot" and not Mod(msg) and Bots == "kick" then   
 https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_)
-𝙻𝚄𝙵𝙵𝚈= https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
+LUFFY= https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
 local Json_Info = JSON.decode(KLAER)
 if Json_Info.ok == true and #mem_id == i then
 local Msgs = {}
@@ -22233,7 +22233,7 @@ local mem_id = msg.content_.members_
 local Bots = bot_data:get(ban_id.."lock:Bot:kick"..msg.chat_id_) 
 for i=0,#mem_id do  
 if msg.content_.members_[i].type_.ID == "UserTypeBot" and not Mod(msg) and Bots == "del" then   
-𝙻𝚄𝙵𝙵𝚈= https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
+LUFFY= https.request("https://api.telegram.org/bot"..token.."/kickChatMember?chat_id="..msg.chat_id_.."&user_id="..mem_id[i].id_)
 local Json_Info = JSON.decode(KLAER)
 if Json_Info.ok == true and #mem_id == i then
 local Msgs = {}
