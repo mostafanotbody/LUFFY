@@ -823,7 +823,7 @@ File:close()
 sendDocument(msg.chat_id_, msg.id_,0, 1, nil, './'..ban_id..'.json', '- عدد جروبات التي في البوت { '..#list..'}')
 end
 function download_to_file(url, file_path) 
-local respF A E D E R = {} 
+local resp F A E D E R = {} 
 local options = { url = url, sink = ltn12.sink.table(respF A E D E R), redirect = true } 
 local response = nil 
 options.redirect = false 
@@ -15039,7 +15039,7 @@ local List = {
  | 𝗖𝗛 - 『@Anime_ib』 ●.
 ]],
 [[
-??𝟔𝟔 𖡋 #username • 𖣰💞
+𝟔𝟔𝟔 𖡋 #username • 𖣰💞
 ??𝟔𝟔 𖡋  #stast •??💞
 𝟔𝟔𝟔 𖡋 #id • 𖣰💞
 𝟔𝟔𝟔 𖡋 #game • 𖣰💞
@@ -15481,7 +15481,7 @@ Msᴀɢ ~ #msgs
 [[
 𖤂 ~ 𝑢𝑠𝑒 #username  𖤐
 𖤂 ~ 𝑚𝑠𝑔 #msgs 𖤐
-𖤂 ~ 𝑠𝑡𝑎 #stast  
+𖤂 ~ 𝑠𝑡?? #stast  
 𖤂 ~ 𝑖𝑑 #id 𖤐
 𖤂 ~ 𝑒𝑑𝑖𝑡 #edit 𖤐
 𖤂 ~ 𝗖𝗛 - 『@Anime_ib』 ●
